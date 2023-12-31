@@ -1,2 +1,8 @@
+#### MacOS
 .DS_Store
+.AppleDouble
+.LSOverride
 
+#### Composer
+composer.phar
+./vendor/
