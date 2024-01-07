@@ -1,9 +1,9 @@
-<?php 
+<?php
 
-namespace popp\test;
+namespace popp\test\ch03;
 use PHPUnit\Framework\TestCase;
 
-class BaseUnit extends TestCase 
+class BaseUnit extends TestCase
 {
     function capture(callable $callme)
     {
