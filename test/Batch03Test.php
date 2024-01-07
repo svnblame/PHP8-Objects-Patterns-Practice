@@ -22,5 +22,12 @@ class Batch03Test extends TestCase
         self::assertEquals("author: Willa Cather\n", $output);
     }
 
+    public function testSample()
+    {
+        $sample = new SampleClass();
+        $result = $sample->myMethod("a", "b");
+        self::assertEquals($result[0], "a");
+        self::assertEquals($result[1], "b");
+    }
 
 }
