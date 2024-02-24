@@ -46,7 +46,7 @@ class Batch11Test extends TestCase
 
         $test3 = new CdProduct('cdtitle', 'first', 'main', 99, 88);
         self::assertEquals(
-            'cdtitle ( main, first ) playing time - 88',
+            'cdtitle ( main, first ): playing time - 88',
             $test3->getSummaryLine()
         );
 
@@ -62,13 +62,13 @@ class Batch11Test extends TestCase
         $writer->write($test3);
         $out3 = ob_get_contents();
         ob_end_clean();
-        self::assertEquals('cdtitle: first main (99)\n', $out3);
+        self::assertEquals("cdtitle: first main (99)\n", $out3);
 
         ob_start();
         $writer->write($test4);
         $out4 = ob_get_contents();
         ob_end_clean();
-        self::assertEquals('booktitle: first main (99)', $out4);
+        self::assertEquals("booktitle: first main (99)\n", $out4);
     }
 
     public function testPoint()
