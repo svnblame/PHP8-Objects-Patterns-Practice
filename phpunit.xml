@@ -13,8 +13,11 @@
          failOnWarning="true"
          verbose="true">
     <testsuites>
-        <testsuite name="default">
-            <directory>test</directory>
+        <testsuite name="ch03batch13">
+            <file>test/ch03/Batch13Test.php</file>
+        </testsuite>
+        <testsuite name="ch03batch14">
+            <file>test/ch03/Batch14Test.php</file>
         </testsuite>
     </testsuites>
 
