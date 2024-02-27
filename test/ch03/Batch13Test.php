@@ -7,10 +7,8 @@ require_once("vendor/autoload.php");
 use PHPUnit\Framework\TestCase;
 
 use popp\ch03\batch13\Storage;
-use popp\ch03\batch13\ShopProduct;
 use popp\ch03\batch13\BookProduct;
 use popp\ch03\batch13\CdProduct;
-use popp\ch03\batch13\Runner;
 
 class Batch13Test extends TestCase
 {
