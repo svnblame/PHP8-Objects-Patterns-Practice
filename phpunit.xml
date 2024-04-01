@@ -19,6 +19,9 @@
         <testsuite name="ch03batch14">
             <file>test/ch03/Batch14Test.php</file>
         </testsuite>
+        <testsuite name="ch03batch15">
+            <file>test/ch03/Batch15Test.php</file>
+        </testsuite>
     </testsuites>
 
     <coverage cacheDirectory=".phpunit.cache/code-coverage"
