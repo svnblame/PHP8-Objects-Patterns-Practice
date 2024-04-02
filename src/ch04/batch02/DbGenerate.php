@@ -35,9 +35,9 @@ SQL;
         $pdo->query("INSERT INTO products ( type, firstname, mainname, title, price, numpages, playlength, discount )
             values ( 'book', 'willa', 'cather', 'my antonia', 4.22, 200, NULL, 0 )");
         $pdo->query("INSERT INTO products ( type, firstname, mainname, title, price, numpages, playlength, discount ) 
-            values ( 'book', 'willa', 'cather', 'my antonia', 4.22, 200, NULL, 0 )");
+            values ( 'cd', 'the', 'clash', 'london calling', 4.22, 200, 60, 0 )");
         $pdo->query("INSERT INTO products ( type, firstname, mainname, title, price, numpages, playlength, discount )
-            values ( 'book', 'willa', 'cather', 'my antonia', 4.22, 200, NULL, 0 )");
+            values ( 'shop', NULL, 'pears', 'soap', 4.22, NULL, NULL, 0 )");
 
         return $pdo;
     }

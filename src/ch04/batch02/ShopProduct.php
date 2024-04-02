@@ -97,7 +97,7 @@ class ShopProduct
                 );
                 break;
             case "cd":
-                $product = CdProduct(
+                $product = new CdProduct(
                     $row['title'],
                     $row['firstname'],
                     $row['mainname'],
