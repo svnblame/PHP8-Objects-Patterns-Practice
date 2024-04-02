@@ -25,6 +25,9 @@
         <testsuite name="ch04batch01">
             <file>test/ch04/Batch01Test.php</file>
         </testsuite>
+        <testsuite name="ch04batch02">
+            <file>test/ch04/Batch02Test.php</file>
+        </testsuite>
     </testsuites>
 
     <coverage cacheDirectory=".phpunit.cache/code-coverage"
