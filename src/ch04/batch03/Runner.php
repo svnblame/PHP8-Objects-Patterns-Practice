@@ -14,4 +14,30 @@ class Runner
         /* listing 04.10, page 86 */
         $writer = new ShopProductWriter();
     }
+
+    private static function getProducts(): array 
+    {
+        $product1 = new BookProduct("My Antonia", "Willa", "Cather", 5.99, 300);
+        $product2 = new CdProduct("Exile on Coldharbour Lane", "The", "Alabama 3", 10.99, 60);
+
+        return [$product1, $product2];
+    }
+
+    public static function run3() 
+    {
+        list($product1, $product2) = self::getProducts();
+        $textwriter = new TextProductWriter();
+        $textwriter->addProduct($product1);
+        $textwriter->addProduct($product2);
+        $textwriter->write();
+    }
+
+    public static function run4() 
+    {
+        list($product1, $product2) = self::getProducts();
+        $xmlwriter = new XmlProductWriter();
+        $xmlwriter->addProduct($product1);
+        $xmlwriter->addProduct($product2);
+        $xmlwriter->write();
+    }
 }

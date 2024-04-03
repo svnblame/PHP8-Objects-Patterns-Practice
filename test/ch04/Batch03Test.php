@@ -19,9 +19,13 @@ class Batch03Test extends BaseUnit
     public function testErroredWriter() 
     {
         // uncomment to show fatal error - class does not implement abstract methods
-        $writer = new ErroredWriter();
+        // $writer = new ErroredWriter();
         self::assertTrue(true);
     }
 
-    
+    public function testRunnerXmlWriter() 
+    {
+        $val = $this->capture(function() { Runner::run4(); });
+        self::assertMatchesRegularExpression("/Coldharbour/", $val);
+    }
 }
