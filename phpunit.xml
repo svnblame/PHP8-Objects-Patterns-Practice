@@ -13,20 +13,18 @@
          failOnWarning="true"
          verbose="true">
     <testsuites>
-        <testsuite name="ch03batch13">
-            <file>test/ch03/Batch13Test.php</file>
-        </testsuite>
-        <testsuite name="ch03batch14">
-            <file>test/ch03/Batch14Test.php</file>
-        </testsuite>
-        <testsuite name="ch03batch15">
-            <file>test/ch03/Batch15Test.php</file>
+        <testsuite name="ch03">
+            <directory>test/ch03</directory>
+            <!-- <file>test/ch03/Batch13Test.php</file> -->
         </testsuite>
         <testsuite name="ch04batch01">
             <file>test/ch04/Batch01Test.php</file>
         </testsuite>
         <testsuite name="ch04batch02">
             <file>test/ch04/Batch02Test.php</file>
+        </testsuite>
+            <testsuite name="ch04batch03">
+            <file>test/ch04/Batch03Test.php</file>
         </testsuite>
     </testsuites>
 
