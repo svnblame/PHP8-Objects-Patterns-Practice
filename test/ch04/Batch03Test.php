@@ -28,4 +28,10 @@ class Batch03Test extends BaseUnit
         $val = $this->capture(function() { Runner::run4(); });
         self::assertMatchesRegularExpression("/Coldharbour/", $val);
     }
+
+    public function testRunnerTextWriter() 
+    {
+        $val = $this->capture(function() { Runner::run3(); });
+        self::assertMatchesRegularExpression("/Coldharbour/", $val);
+    }
 }
