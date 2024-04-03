@@ -16,5 +16,19 @@ class Batch05Test extends BaseUnit
         $price = Runner::run();
         self::assertEquals($price, "12.22");
     }
+
+    public function testCdInfo() 
+    {
+        $product = new CdProduct(
+            "Exile on Coldharbour Lane",
+            "The",
+            "Alabama 3",
+            10.99,
+            60
+        );
+        $runner = new Runner();
+        $len = $runner->cdInfo($product);
+        self::assertEquals(60, $len);
+    }
 }
 
