@@ -23,8 +23,11 @@
         <testsuite name="ch04batch02">
             <file>test/ch04/Batch02Test.php</file>
         </testsuite>
-            <testsuite name="ch04batch03">
+        <testsuite name="ch04batch03">
             <file>test/ch04/Batch03Test.php</file>
+        </testsuite>
+        <testsuite name="ch04batch05">
+            <file>test/ch04/Batch05Test.php</file>
         </testsuite>
     </testsuites>
 
