@@ -14,6 +14,12 @@ class Runner
         return $product->getPrice();
     }
 
+    public static function run2()
+    {
+        $consultancy = new Consultancy();
+        print $consultancy->getPrice();
+    }
+
     /* listing 04.17, page 90 */
     public function cdInfo(CdProduct $prod): int 
     {
@@ -21,5 +27,16 @@ class Runner
         $length = $prod->getPlayLength();
 
         return $length;
+    }
+
+    public function addChargeableItem(Chargeable $item)
+    {
+        // all we know about $item is that it
+        // is a Chargeable object -- the fact that it
+        // is also a CdProduct is irrelevant.
+        // We can only be sure of getPrice() method being available
+        // ...
+        /* listing 04.19 */
+        return $item->getPrice();
     }
 }
