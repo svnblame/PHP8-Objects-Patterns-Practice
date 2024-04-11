@@ -38,6 +38,7 @@
             <file>test/ch04/Batch06_5Test.php</file>
             <file>test/ch04/Batch06_6Test.php</file>
             <file>test/ch04/Batch06_7Test.php</file>
+            <file>test/ch04/Batch06_8Test.php</file>
         </testsuite>
     </testsuites>
 
