@@ -65,6 +65,9 @@
         <testsuite name="ch04batch17">
             <file>test/ch04/Batch17Test.php</file>
         </testsuite> 
+        <testsuite name="ch04batch18">
+            <file>test/ch04/Batch18Test.php</file>
+        </testsuite> 
     </testsuites>
 
     <coverage cacheDirectory=".phpunit.cache/code-coverage"
