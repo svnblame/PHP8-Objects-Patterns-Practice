@@ -16,6 +16,11 @@ class Runner
         self::init2();
     }
 
+    public static function run3()
+    {
+        self::init3();
+    }
+
     /* listing 04.74, page 119 */
     /* Cleaning up after try/catch blocks with finally */
     public static function init(): void 
@@ -74,6 +79,20 @@ class Runner
         } finally {
             fputs($fh, "end\n");
             fclose($fh);
+        }
+    }
+
+    public static function init3(): void 
+    {
+        /* listing 04.80, page 124 */
+        /* The internal Error class */
+        try {
+            eval("illigal code");
+        } catch (\Error $e) {
+            print get_class($e) . "\n";
+            print $e->getMessage();
+        } catch (\Exception $e) {
+            // do something with an Exception
         }
     }
 }

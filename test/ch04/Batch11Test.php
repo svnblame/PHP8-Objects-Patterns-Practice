@@ -29,4 +29,10 @@ class Batch11Test extends BaseUnit
         $contents = file_get_contents($logfile);
         self::assertEquals("start\nfile exception\nend\n", $contents);
     }
+
+    public function testRunnerBuiltInError()
+    {
+        $val = $this->capture(function() { Runner::run3(); });
+        self::assertEquals("ParseError\nsyntax error, unexpected identifier \"code\"", $val);
+    }
 }
