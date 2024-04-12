@@ -18,4 +18,15 @@ class Batch11Test extends BaseUnit
         $contents = file_get_contents($logfile);
         self::assertEquals("start\nxml exception\n", $contents);
     }
+
+    public function testRunnerExceptionWithFinally() 
+    {
+        $logfile = "/usr/local/share/logs/log.txt";
+        if (file_exists($logfile)) {
+            unlink($logfile);
+        }
+        $val = $this->capture(function() { Runner::run2(); });
+        $contents = file_get_contents($logfile);
+        self::assertEquals("start\nfile exception\nend\n", $contents);
+    }
 }
