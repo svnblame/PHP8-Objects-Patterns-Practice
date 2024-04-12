@@ -49,7 +49,10 @@
         </testsuite>
         <testsuite name="ch04batch12">
             <file>test/ch04/Batch12Test.php</file>
-        </testsuite>        
+        </testsuite>
+        <testsuite name="ch04batch13">
+            <file>test/ch04/Batch13Test.php</file>
+        </testsuite>          
     </testsuites>
 
     <coverage cacheDirectory=".phpunit.cache/code-coverage"
