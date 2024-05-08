@@ -10,5 +10,8 @@
             "popp\\": ["src/"],
             "popp\\test\\": ["test/"]
         }
-    }
+    },
+  "require": {
+    "ext-pdo": "*"
+  }
 }

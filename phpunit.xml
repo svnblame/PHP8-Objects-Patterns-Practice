@@ -15,61 +15,9 @@
     <testsuites>
         <testsuite name="ch03">
             <directory>test/ch03</directory>
-            <!-- <file>test/ch03/Batch13Test.php</file> -->
         </testsuite>
-        <testsuite name="ch04batch01">
-            <file>test/ch04/Batch01Test.php</file>
-        </testsuite>
-        <testsuite name="ch04batch02">
-            <file>test/ch04/Batch02Test.php</file>
-        </testsuite>
-        <testsuite name="ch04batch03">
-            <file>test/ch04/Batch03Test.php</file>
-        </testsuite>
-        <testsuite name="ch04batch05">
-            <file>test/ch04/Batch05Test.php</file>
-        </testsuite>
-        <testsuite name="ch04batch06">
-            <file>test/ch04/Batch06Test.php</file>
-            <file>test/ch04/Batch06_1Test.php</file>
-            <file>test/ch04/Batch06_2Test.php</file>
-            <file>test/ch04/Batch06_3Test.php</file>
-            <file>test/ch04/Batch06_4Test.php</file>
-            <file>test/ch04/Batch06_5Test.php</file>
-            <file>test/ch04/Batch06_6Test.php</file>
-            <file>test/ch04/Batch06_7Test.php</file>
-            <file>test/ch04/Batch06_8Test.php</file>
-            <file>test/ch04/Batch06_9Test.php</file>
-        </testsuite>
-        <testsuite name="ch04batch07">
-            <file>test/ch04/Batch07Test.php</file>
-        </testsuite>
-        <testsuite name="ch04batch11">
-            <file>test/ch04/Batch11Test.php</file>
-        </testsuite>
-        <testsuite name="ch04batch12">
-            <file>test/ch04/Batch12Test.php</file>
-        </testsuite>
-        <testsuite name="ch04batch13">
-            <file>test/ch04/Batch13Test.php</file>
-        </testsuite>  
-        <testsuite name="ch04batch14">
-            <file>test/ch04/Batch14Test.php</file>
-        </testsuite>        
-        <testsuite name="ch04batch15">
-            <file>test/ch04/Batch15Test.php</file>
-        </testsuite> 
-        <testsuite name="ch04batch16">
-            <file>test/ch04/Batch16Test.php</file>
-        </testsuite> 
-        <testsuite name="ch04batch17">
-            <file>test/ch04/Batch17Test.php</file>
-        </testsuite> 
-        <testsuite name="ch04batch18">
-            <file>test/ch04/Batch18Test.php</file>
-        </testsuite> 
-        <testsuite name="ch04batch19">
-            <file>test/ch04/Batch19Test.php</file>
+        <testsuite name="ch04">
+            <directory>test/ch04</directory>
         </testsuite>
     </testsuites>
 
