@@ -2,6 +2,8 @@
 
 namespace popp\ch04\batch02;
 
+use popp\AppConfig;
+
 class DbGenerate 
 {
     public function getPDO(): \PDO 
@@ -20,8 +22,7 @@ class DbGenerate
             discount int )
 SQL;
 
-        // $dsn = "sqlite:/".__DIR__."/products.db";
-        $dsn = "sqlite:/usr/local/var/db/sqlite/products.sqlite3";
+        $dsn = AppConfig::get('dsn');
         $pdo = new \PDO($dsn, null, null);
         $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 

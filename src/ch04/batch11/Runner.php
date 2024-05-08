@@ -2,10 +2,17 @@
 
 namespace popp\ch04\batch11;
 
+use popp\AppConfig;
+use popp\Logger;
+
 class Runner 
 {
-    private static string $logFile = "/usr/local/share/logs/log.txt";
+    private static array $appConfig = [];
 
+    public function __construct()
+    {
+        self::$appConfig = AppConfig::getConfig();
+    }
     public static function run() 
     {
         self::init();
@@ -25,8 +32,9 @@ class Runner
     /* Cleaning up after try/catch blocks with finally */
     public static function init(): void 
     {
+        $fh = Logger::get();
+
         try {
-            $fh = fopen(self::$logFile, "a");
             fputs($fh, "start\n");
             $conf = new Conf(dirname(__FILE__) . "/conf.broken.xml");
             print "user: " . $conf->get('user') . "\n";
@@ -38,7 +46,6 @@ class Runner
         } catch (FileException $e) {
             // permissions issue or non-existent file
             fputs($fh, "file exception\n");
-            throw $e;
         } catch (XmlException $e) {
             // broken xml
             fputs($fh, "xml exception\n");
@@ -55,8 +62,9 @@ class Runner
     /* Cleaning up after try/catch blocks with finally */
     public static function init2(): void 
     {
+        $fh = Logger::get();
+
         try {
-            $fh = fopen(self::$logFile, "a");
             fputs($fh, "start\n");
             $conf = new Conf(dirname(__FILE__) . "/conf.not-there.xml");
             print "user: " . $conf->get('user') . "\n";
@@ -66,13 +74,12 @@ class Runner
         } catch (FileException $e) {
             // permission issue or non-existent file
             fputs($fh, "file exception\n");
-            // throw $e
         } catch (XmlException $e) {
             // broken xml
             fputs($fh, "xml exception\n");
         } catch (ConfException $e) {
             // wrong kind of XML file
-            fputs($fh, "general exception\n");
+            fputs($fh, "conf exception\n");
         } catch (\Exception $e) {
             // backstop: should not be called
             fputs($fh, "general exception\n");

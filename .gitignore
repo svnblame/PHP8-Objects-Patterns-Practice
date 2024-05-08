@@ -9,3 +9,6 @@ vendor/
 
 #### PhpUnit
 .phpunit.cache/*
+
+#### JetBrains
+.idea

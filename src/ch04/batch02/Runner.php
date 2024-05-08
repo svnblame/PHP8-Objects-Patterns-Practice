@@ -2,6 +2,8 @@
 
 namespace popp\ch04\batch02;
 
+use popp\AppConfig;
+
 class Runner 
 {
     public static function run() 
@@ -14,12 +16,13 @@ class Runner
         $obj = ShopProduct::getInstance(2, $pdo);
         print_r($obj);
         $obj = ShopProduct::getInstance(3, $pdo);
-        print_r($pdo);
+        print_r($obj);
     }
 
     public static function run2() 
     {
-        $dsn = "sqlite:/usr/local/var/db/sqlite/products.sqlite3";
+        // @todo put this into an application configuration file!
+        $dsn = AppConfig::get('dsn');
         $pdo = new \PDO($dsn, null, null);
         $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         $obj = ShopProduct::getInstance(1, $pdo);
