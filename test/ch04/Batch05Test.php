@@ -10,7 +10,7 @@ use popp\ch04\batch05\Shipping;
 use popp\ch04\batch05\Document;
 use popp\ch04\batch05\User;
 
-require_once("vendor/autoload.php");
+require_once 'vendor/autoload.php';
 
 class Batch05Test extends BaseUnit 
 {
