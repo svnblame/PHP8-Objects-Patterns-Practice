@@ -1,8 +1,9 @@
 <?php
 
-namespace popp\ch03;
+namespace popp\test\ch03;
 
-require_once("vendor/autoload.php");
+require_once 'vendor/autoload.php';
+
 use PHPUnit\Framework\TestCase;
 
 use popp\ch03\batch05\AddressManager;

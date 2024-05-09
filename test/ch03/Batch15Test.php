@@ -1,7 +1,8 @@
 <?php declare(strict_types=1);
-namespace popp\ch03;
 
-require_once("vendor/autoload.php");
+namespace popp\test\ch03;
+
+require_once 'vendor/autoload.php';
 
 use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestCase;
