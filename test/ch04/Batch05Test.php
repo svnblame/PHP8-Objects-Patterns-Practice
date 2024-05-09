@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace popp\ch04;
+namespace popp\test\ch04;
 
 use popp\test\BaseUnit;
 use popp\ch04\batch05\Runner;
