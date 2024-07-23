@@ -52,4 +52,14 @@ class Runner
     {
         require_once(__DIR__ . '/Autoload2.php');
     }
+
+    public static function run10(): void
+    {
+        $here = getcwd();
+        chdir(__DIR__);
+
+        require_once(__DIR__ . '/Autoload3.php');
+
+        chdir($here);
+    }
 }

@@ -83,5 +83,9 @@ EXPECTED;
 
         self::assertEquals('saying hi from underscore file', $val);
 
+        $val = $this->capture(function () { Runner::run10(); });
+
+        self::assertEquals("hello from util\\LocalPath", $val);
+
     }
 }
