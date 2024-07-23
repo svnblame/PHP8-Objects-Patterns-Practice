@@ -75,5 +75,10 @@ EXPECTED;
 
         self::assertEquals($expected, $val);
 
+        $val = $this->capture(function () { Runner::run8(); });
+
+        self::assertEquals('saying hi from root', $val);
+
+
     }
 }

@@ -42,4 +42,9 @@ class Runner
     {
         CoreDebug::helloWorld();
     }
+
+    public static function run8(): void
+    {
+        require_once(__DIR__ . '/Autoload.php');
+    }
 }
