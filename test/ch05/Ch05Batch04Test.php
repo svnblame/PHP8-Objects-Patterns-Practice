@@ -79,6 +79,9 @@ EXPECTED;
 
         self::assertEquals('saying hi from root', $val);
 
+        $val = $this->capture(function () { Runner::run9(); });
+
+        self::assertEquals('saying hi from underscore file', $val);
 
     }
 }

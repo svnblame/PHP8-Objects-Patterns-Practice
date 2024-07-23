@@ -47,4 +47,9 @@ class Runner
     {
         require_once(__DIR__ . '/Autoload.php');
     }
+
+    public static function run9(): void
+    {
+        require_once(__DIR__ . '/Autoload2.php');
+    }
 }
