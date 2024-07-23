@@ -24,4 +24,9 @@ class Runner
     {
         FromClient::run();
     }
+
+    public static function run3(): void
+    {
+        util\Debug::helloWorld();
+    }
 }
