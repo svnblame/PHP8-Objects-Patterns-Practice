@@ -66,6 +66,14 @@ EXPECTED;
 
         self::assertEquals($expected, $val);
 
+        $val = $this->capture(function () { Runner::run5(); });
+
+        $expected = <<<EXPECTED
+hello from popp\ch05\batch04\Debug
+
+EXPECTED;
+
+        self::assertEquals($expected, $val);
 
     }
 }

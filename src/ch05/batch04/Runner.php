@@ -5,6 +5,7 @@ namespace popp\ch05\batch04;
 use popp\ch05\batch04\util\InSame;
 use popp\ch05\batch04\client\FromClient;
 use popp\ch05\batch04\util\Debug;
+use popp\ch05\batch04\Debug as CoreDebug;
 
 class Runner
 {
@@ -35,5 +36,10 @@ class Runner
     {
         /* listing 05.08 */
         Debug::helloWorld();
+    }
+
+    public static function run5(): void
+    {
+        CoreDebug::helloWorld();
     }
 }
