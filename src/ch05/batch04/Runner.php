@@ -62,4 +62,13 @@ class Runner
 
         chdir($here);
     }
+
+    public static function run10_2(): void
+    {
+        $path = get_include_path();
+        set_include_path("{$path}:" . __DIR__);
+        require_once(__DIR__ . '/Autoload3_1.php');
+
+        set_include_path($path);
+    }
 }

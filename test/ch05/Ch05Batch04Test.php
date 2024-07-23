@@ -87,5 +87,9 @@ EXPECTED;
 
         self::assertEquals("hello from util\\LocalPath", $val);
 
+        $val = $this->capture(function () { Runner::run10_2(); });
+
+        self::assertEquals("hello from util\\LocalPath", $val);
+
     }
 }
