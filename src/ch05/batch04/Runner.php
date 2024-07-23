@@ -4,6 +4,7 @@ namespace popp\ch05\batch04;
 
 use popp\ch05\batch04\util\InSame;
 use popp\ch05\batch04\client\FromClient;
+use popp\ch05\batch04\util\Debug;
 
 class Runner
 {
@@ -28,5 +29,11 @@ class Runner
     public static function run3(): void
     {
         util\Debug::helloWorld();
+    }
+
+    public static function run4(): void
+    {
+        /* listing 05.08 */
+        Debug::helloWorld();
     }
 }
