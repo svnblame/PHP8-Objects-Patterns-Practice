@@ -3,6 +3,7 @@
 namespace popp\ch05\batch04;
 
 use popp\ch05\batch04\util\InSame;
+use popp\ch05\batch04\client\FromClient;
 
 class Runner
 {
@@ -14,8 +15,13 @@ class Runner
         \popp\ch05\batch04\Debug::helloWorld();
     }
 
-    public static function run()
+    public static function run(): void
     {
         InSame::run();
+    }
+
+    public static function run2(): void
+    {
+        FromClient::run();
     }
 }

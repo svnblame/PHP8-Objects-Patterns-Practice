@@ -5,7 +5,7 @@ namespace popp\test\ch05;
 use popp\test\BaseUnit;
 use popp\ch05\batch04\Runner;
 
-class Batch04Test extends BaseUnit
+class Ch05Batch04Test extends BaseUnit
 {
     /*
      * @test
@@ -39,6 +39,14 @@ EXPECTED;
 
         self::assertEquals($expected, $val);
 
+        $val = $this->capture(function () { Runner::run2(); });
+
+        $expected = <<<EXPECTED
+hello from Debug
+
+EXPECTED;
+
+        self::assertEquals($expected, $val);
 
     }
 }
