@@ -91,5 +91,24 @@ EXPECTED;
 
         self::assertEquals("hello from util\\LocalPath", $val);
 
+        $val = $this->capture(function () { Runner::run11(); });
+
+        $expected = "saying hi from underscore filehello from util\\LocalPath";
+
+        self::assertEquals($expected, $val);
+    }
+
+    public function testUnClash()
+    {
+        $val = $this->capture(function () { require_once('src/ch05/batch04/unclash.php'); });
+        self::assertEquals("hello from popp\ch05\batch04\Debug\n", $val);
+    }
+
+    public function testMulti()
+    {
+        $val = $this->capture(function() {
+            require_once('src/ch05/batch04/Multi.php');
+        });
+        self::assertEquals("hello from Debug\n", $val);
     }
 }

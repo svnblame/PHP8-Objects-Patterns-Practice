@@ -71,4 +71,9 @@ class Runner
 
         set_include_path($path);
     }
+
+    public static function run11(): void
+    {
+        require_once(__DIR__ . '/Autoload4.php');
+    }
 }
