@@ -9,7 +9,7 @@ class Batch23Test extends BaseUnit
 {
     public function testRunner()
     {
-        $val = $this->capture(function () {
+        $val = $this->capture(function() {
             Runner::run2();
         });
 
@@ -26,7 +26,7 @@ EXPECTED;
 
     public function testRunnerArrowFunction()
     {
-        $val = $this->capture(function () {
+        $val = $this->capture(function() {
             Runner::run3();
         });
 

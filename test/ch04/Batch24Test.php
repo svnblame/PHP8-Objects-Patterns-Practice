@@ -9,7 +9,7 @@ class Batch24Test extends BaseUnit
 {
     public function testRunnerPrint()
     {
-        $val = $this->capture(function () {
+        $val = $this->capture(function() {
             Runner::run();
         });
 
@@ -24,7 +24,7 @@ class Batch24Test extends BaseUnit
             unlink($path);
         }
 
-        $this->capture(function () {
+        $this->capture(function() {
             Runner::run2();
         });
 
