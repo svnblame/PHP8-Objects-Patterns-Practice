@@ -17,7 +17,7 @@ class Batch06Test extends BaseUnit
 
     public function testCalculateTax()
     {
-        $val = $this->capture(function () { Runner::run2(); });
+        $val = $this->capture(function() { Runner::run2(); });
         self::assertEquals("20\n", $val);
     }
 }
