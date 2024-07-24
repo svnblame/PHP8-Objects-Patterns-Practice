@@ -2,10 +2,13 @@
 
 namespace popp\ch05\batch04;
 
-use popp\ch05\batch04\util\InSame;
 use popp\ch05\batch04\client\FromClient;
-use popp\ch05\batch04\util\Debug;
 use popp\ch05\batch04\Debug as CoreDebug;
+use popp\ch05\batch04\util\Debug;
+use popp\ch05\batch04\util\InSame;
+use popp\ch05\batch04\util\TreeLister;
+
+/* listing 05.19 */
 
 class Runner
 {
@@ -41,6 +44,13 @@ class Runner
     public static function run5(): void
     {
         CoreDebug::helloWorld();
+    }
+
+    public static function run7()
+    {
+        /* listing 05.19 */
+        TreeLister::helloWorld();  // access local
+        \popp\TreeLister::helloWorld(); // access from root
     }
 
     public static function run8(): void

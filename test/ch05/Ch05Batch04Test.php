@@ -164,4 +164,17 @@ EXPECTED;
 
         self::assertEquals($expected, $val);
     }
+
+    public function testRunner7()
+    {
+        $val = $this->capture(function() { Runner::run7(); });
+
+        $expected = <<<EXPECTED
+hello from popp\ch05\batch04\util
+hello from root namespace
+
+EXPECTED;
+
+        self::assertEquals($expected, $val);
+    }
 }
