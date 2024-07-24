@@ -95,3 +95,15 @@ function mainrun2(): void
     /* listing 05.11 */
     \popp\ch05\batch04\Debug::helloWorld();
 }
+
+function mainrun3(): void
+{
+    /* listing 05.12 */
+    util\Debug::helloWorld();
+}
+
+function mainrun4(): void
+{
+    /* listing 05.13 */
+    Debug::helloWorld();
+}

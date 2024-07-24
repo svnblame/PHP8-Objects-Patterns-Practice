@@ -72,7 +72,7 @@ class Batch05Test extends BaseUnit
 
     public function testConsultancy()
     {
-        $val = $this->capture(function () { Runner::run2(); });
+        $val = $this->capture(function() { Runner::run2(); });
         self::assertEquals(5.5, $val);
     }
 

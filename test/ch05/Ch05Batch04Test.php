@@ -21,7 +21,7 @@ class Ch05Batch04Test extends BaseUnit
      */
     public function testRunner()
     {
-        $val = $this->capture(function () { Runner::runbefore(); });
+        $val = $this->capture(function() { Runner::runbefore(); });
 
         $expected = <<<EXPECTED
 hello from popp\ch05\batch04\Debug
@@ -30,7 +30,7 @@ EXPECTED;
 
         self::assertEquals($expected, $val);
 
-        $val = $this->capture(function () { Runner::run(); });
+        $val = $this->capture(function() { Runner::run(); });
 
         $expected = <<<EXPECTED
 hello from Debug
@@ -39,7 +39,7 @@ EXPECTED;
 
         self::assertEquals($expected, $val);
 
-        $val = $this->capture(function () { Runner::run2(); });
+        $val = $this->capture(function() { Runner::run2(); });
 
         $expected = <<<EXPECTED
 hello from Debug
@@ -48,7 +48,7 @@ EXPECTED;
 
         self::assertEquals($expected, $val);
 
-        $val = $this->capture(function () { Runner::run3(); });
+        $val = $this->capture(function() { Runner::run3(); });
 
         $expected = <<<EXPECTED
 hello from Debug
@@ -57,7 +57,7 @@ EXPECTED;
 
         self::assertEquals($expected, $val);
 
-        $val = $this->capture(function () { Runner::run4(); });
+        $val = $this->capture(function() { Runner::run4(); });
 
         $expected = <<<EXPECTED
 hello from Debug
@@ -66,7 +66,7 @@ EXPECTED;
 
         self::assertEquals($expected, $val);
 
-        $val = $this->capture(function () { Runner::run5(); });
+        $val = $this->capture(function() { Runner::run5(); });
 
         $expected = <<<EXPECTED
 hello from popp\ch05\batch04\Debug
@@ -75,23 +75,23 @@ EXPECTED;
 
         self::assertEquals($expected, $val);
 
-        $val = $this->capture(function () { Runner::run8(); });
+        $val = $this->capture(function() { Runner::run8(); });
 
         self::assertEquals('saying hi from root', $val);
 
-        $val = $this->capture(function () { Runner::run9(); });
+        $val = $this->capture(function() { Runner::run9(); });
 
         self::assertEquals('saying hi from underscore file', $val);
 
-        $val = $this->capture(function () { Runner::run10(); });
+        $val = $this->capture(function() { Runner::run10(); });
 
         self::assertEquals("hello from util\\LocalPath", $val);
 
-        $val = $this->capture(function () { Runner::run10_2(); });
+        $val = $this->capture(function() { Runner::run10_2(); });
 
         self::assertEquals("hello from util\\LocalPath", $val);
 
-        $val = $this->capture(function () { Runner::run11(); });
+        $val = $this->capture(function() { Runner::run11(); });
 
         $expected = "saying hi from underscore filehello from util\\LocalPath";
 
@@ -100,7 +100,7 @@ EXPECTED;
 
     public function testUnClash()
     {
-        $val = $this->capture(function () { require_once('src/ch05/batch04/unclash.php'); });
+        $val = $this->capture(function() { require_once('src/ch05/batch04/unclash.php'); });
         self::assertEquals("hello from popp\ch05\batch04\Debug\n", $val);
     }
 
@@ -134,6 +134,34 @@ hello from popp\ch05\batch04\Debug
 EXPECTED;
 
         self::assertEquals($expected, $val);
+    }
+    
+    public function testMain3()
+    {
+        // force include
+        $val = $this->capture(function() { Runner::runbefore(); });
+        
+        $val = $this->capture(function() { \main\mainrun3(); });
 
+        $expected = <<<EXPECTED
+hello from Debug
+
+EXPECTED;
+
+        self::assertEquals($expected, $val);
+    }
+
+    public function testMain4()
+    {
+        $val = $this->capture(function() { Runner::runbefore(); });
+
+        $val = $this->capture(function() { \main\mainrun4(); });
+
+        $expected = <<<EXPECTED
+hello from Debug
+
+EXPECTED;
+
+        self::assertEquals($expected, $val);
     }
 }

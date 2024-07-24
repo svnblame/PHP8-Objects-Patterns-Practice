@@ -11,7 +11,7 @@ class Batch06_2Test extends BaseUnit
 {
     public function testRunner() 
     {
-        $val = $this->capture(function () { Runner::run(); });
+        $val = $this->capture(function() { Runner::run(); });
         self::assertMatchesRegularExpression("/20\n[a-f0-9]+\n/", $val);
     }
 }
