@@ -76,4 +76,22 @@ class Runner
     {
         require_once(__DIR__ . '/Autoload4.php');
     }
+
+}
+
+namespace main;
+
+use popp\ch05\batch04\util;
+use popp\ch05\batch04\util\Debug;
+
+function mainrun1(): void
+{
+    /* listing 05.10 */
+    popp\ch05\batch04\Debug::helloWorld();
+}
+
+function mainrun2(): void
+{
+    /* listing 05.11 */
+    \popp\ch05\batch04\Debug::helloWorld();
 }

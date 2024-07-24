@@ -111,4 +111,29 @@ EXPECTED;
         });
         self::assertEquals("hello from Debug\n", $val);
     }
+
+    public function testMain()
+    {
+        // force include
+        $val = $this->capture(function() { Runner::runbefore(); });
+
+        self::expectException(\Error::class);
+        \main\mainrun1();
+    }
+
+    public function testMain2()
+    {
+        // force include
+        $val = $this->capture(function() { Runner::runbefore(); });
+
+        $val = $this->capture(function() { \main\mainrun2(); });
+
+        $expected = <<<EXPECTED
+hello from popp\ch05\batch04\Debug
+
+EXPECTED;
+
+        self::assertEquals($expected, $val);
+
+    }
 }

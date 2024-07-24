@@ -11,7 +11,7 @@ $underscores = function (string $classname) {
 };
 
 $namespaces = function (string $path) {
-    if (preg_match('/\\\\/', DIRECTORY_SEPARATOR, $path)) {
+    if (preg_match('/\\\\/', $path)) {
         $path = str_replace('\\', DIRECTORY_SEPARATOR, $path);
     }
 
