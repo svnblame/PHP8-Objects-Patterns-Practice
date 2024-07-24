@@ -177,4 +177,11 @@ EXPECTED;
 
         self::assertEquals($expected, $val);
     }
+
+    public function testRunRequires()
+    {
+        $val = $this->capture(function() { Runner::runRequires(); });
+
+        self::assertEquals('CustomerWebToolsUser', $val);
+    }
 }

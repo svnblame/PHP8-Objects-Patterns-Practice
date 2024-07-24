@@ -20,6 +20,23 @@ class Runner
         \popp\ch05\batch04\Debug::helloWorld();
     }
 
+    public static function runRequires()
+    {
+        $path = get_include_path();
+        set_include_path("{$path}:" . __DIR__);
+
+        /* listing 05.21 */
+        require_once('business/Customer.php');
+        require_once('util/WebTools.php');
+        /* listing 05.21 */
+
+        /* listing 05.25 */
+        require_once('business/User.php');
+        /* listing 05.25 */
+
+        set_include_path($path);
+    }
+
     public static function run(): void
     {
         InSame::run();
