@@ -80,4 +80,10 @@ EXPECTED;
 
         self::assertEquals($expected, $val);
     }
+
+    public function testDeclared()
+    {
+        $val = $this->capture(function() { Runner::runDeclared(); });
+        self::assertMatchesRegularExpression("/ErrorException/", $val);
+    }
 }

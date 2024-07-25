@@ -115,6 +115,12 @@ class Runner
         call_user_func([$product, 'setDiscount'], 20);
     }
 
+    public static function runDeclared()
+    {
+        /* listing 05.39 */
+        print_r(get_declared_classes());
+    }
+
     public static function getProduct(): CdProduct
     {
         return new CdProduct(
