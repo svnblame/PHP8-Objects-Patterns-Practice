@@ -2,6 +2,10 @@
 
 namespace popp\ch05\batch05;
 
+use popp\ch05\batch05\util as u;
+use popp\ch05\batch05\util\db\Querier as q;
+use popp\ch04\batch02\BookProduct;
+
 class Runner
 {
     public static function runBefore(): void
@@ -54,7 +58,14 @@ class Runner
         }
     }
 
-    public static function getProduct()
+    public static function run3(): void
+    {
+        print u\Writer::class . "\n";
+        print q::class . "\n";
+        print Local::class . "\n";
+    }
+
+    public static function getProduct(): CdProduct
     {
         return new CdProduct(
             'Exile on Coldharbour Lane',

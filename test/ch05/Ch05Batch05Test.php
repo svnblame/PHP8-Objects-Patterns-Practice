@@ -33,6 +33,16 @@ EXPECTED;
 
         self::assertEquals($expected, $val);
 
+        $val = $this->capture(function() { Runner::run3(); });
+
+        $expected = <<<EXPECTED
+popp\ch05\batch05\util\Writer
+popp\ch05\batch05\util\db\Querier
+popp\ch05\batch05\Local
+
+EXPECTED;
+
+        self::assertEquals($expected, $val);
 
 
     }
