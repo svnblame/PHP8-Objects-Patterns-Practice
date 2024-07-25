@@ -65,6 +65,11 @@ class Runner
         print Local::class . "\n";
     }
 
+    public static function run4(): void
+    {
+        print_r(get_class_methods('\\popp\\ch04\\batch02\\BookProduct'));
+    }
+
     public static function getProduct(): CdProduct
     {
         return new CdProduct(

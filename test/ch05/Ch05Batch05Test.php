@@ -44,6 +44,28 @@ EXPECTED;
 
         self::assertEquals($expected, $val);
 
+        $val = $this->capture(function() { Runner::run4(); });
+
+        $expected = <<<EXPECTED
+Array
+(
+    [0] => __construct
+    [1] => getNumberOfPages
+    [2] => getSummaryLine
+    [3] => getPrice
+    [4] => setID
+    [5] => getProducerFirstName
+    [6] => getProducerMainName
+    [7] => setDiscount
+    [8] => getDiscount
+    [9] => getTitle
+    [10] => getProducer
+    [11] => getInstance
+)
+
+EXPECTED;
+
+        self::assertEquals($expected, $val);
 
     }
 }
