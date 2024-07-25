@@ -67,5 +67,17 @@ EXPECTED;
 
         self::assertEquals($expected, $val);
 
+        $val = $this->capture(function() { Runner::run5(); });
+
+        $expected = <<<EXPECTED
+fake titlefake titlefake titlefake titleArray
+(
+    [coverUrl] => cover url
+)
+popp\ch04\batch02\ShopProductBookProduct is a subclass of ShopProduct
+
+EXPECTED;
+
+        self::assertEquals($expected, $val);
     }
 }

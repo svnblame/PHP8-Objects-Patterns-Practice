@@ -70,6 +70,51 @@ class Runner
         print_r(get_class_methods('\\popp\\ch04\\batch02\\BookProduct'));
     }
 
+    public static function run5(): void
+    {
+        /* listing 05.47 */
+        /* listing 05.56 */
+        $product = self::getProduct();
+        $method = "getTitle";   // define a method name
+        print $product->$method();   // invoke the method
+
+        /* listing 05.48 */
+        if (in_array($method, get_class_methods($product))) {
+            print $product->$method();
+        }
+
+        /* listing 05.49 */
+        if (is_callable([$product, $method])) {
+            print $product->$method();
+        }
+
+        /* listing 05.51 */
+        if (method_exists($product, $method)) {
+            print $product->$method();
+        }
+
+        /* listing 05.52 */
+        print_r(get_class_vars('\\popp\\ch05\\batch05\\CdProduct'));
+
+        print get_parent_class('\\popp\\ch04\\batch02\\BookProduct');
+
+        /* listing 05.54 */
+        $product = self::getBookProduct();   // aquire an object
+
+        if (is_subclass_of($product, '\\popp\\ch04\\batch02\\ShopProduct')) {
+            print "BookProduct is a subclass of ShopProduct\n";
+        }
+
+        /* listing 05.55 */
+        if (in_array('someInterface', class_implements($product))) {
+            print "BookProduct is an interface of someInterface\n";
+        }
+
+        /* listing 05.57 */
+        $product = self::getBookProduct();
+        call_user_func([$product, 'setDiscount'], 20);
+    }
+
     public static function getProduct(): CdProduct
     {
         return new CdProduct(
@@ -78,6 +123,17 @@ class Runner
             'Alabama 3',
             10.99,
             60.33
+        );
+    }
+
+    public static function getBookProduct(): BookProduct
+    {
+        return new BookProduct(
+            'Catch 22',
+            'Joseph',
+            'Heller',
+            11.99,
+            300
         );
     }
 }
