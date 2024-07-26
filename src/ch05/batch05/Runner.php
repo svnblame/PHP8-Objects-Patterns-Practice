@@ -135,6 +135,15 @@ class Runner
         print $bookproduct::class;
     }
 
+    public static function runLocal(): void
+    {
+        $here = getcwd();
+        chdir(__DIR__);
+        require_once('LocalNsEg.php');
+
+        chdir($here);
+    }
+
     public static function getProduct(): CdProduct
     {
         return new CdProduct(

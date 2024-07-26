@@ -96,6 +96,19 @@ popp\ch04\batch02\BookProduct
 EXPECTED;
 
         self::assertEquals($expected, $val);
+    }
 
+    public function testRunLocal()
+    {
+        $val = $this->capture(function() { Runner::runLocal(); });
+
+        $expected = <<<EXPECTED
+util\Writer
+util\db\Querier
+mypackage\Local
+
+EXPECTED;
+
+        self::assertEquals($expected, $val);
     }
 }
