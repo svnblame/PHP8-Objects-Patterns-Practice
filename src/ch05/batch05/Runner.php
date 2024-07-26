@@ -115,10 +115,24 @@ class Runner
         call_user_func([$product, 'setDiscount'], 20);
     }
 
-    public static function runDeclared()
+    public static function runDeclared(): void
     {
         /* listing 05.39 */
         print_r(get_declared_classes());
+    }
+
+    public static function runObjClass(): void
+    {
+        /* listing 05.45 */
+        $bookproduct = new BookProduct(
+            'Catch 22',
+            'Joseph',
+            'Helleer',
+            11.99,
+            300
+        );
+
+        print $bookproduct::class;
     }
 
     public static function getProduct(): CdProduct

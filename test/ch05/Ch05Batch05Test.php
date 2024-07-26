@@ -81,9 +81,21 @@ EXPECTED;
         self::assertEquals($expected, $val);
     }
 
-    public function testDeclared()
+    public function testRunDeclared()
     {
         $val = $this->capture(function() { Runner::runDeclared(); });
         self::assertMatchesRegularExpression("/ErrorException/", $val);
+    }
+
+    public function testRunObjClass()
+    {
+        $val = $this->capture(function() { Runner::runObjClass(); });
+
+        $expected = <<<EXPECTED
+popp\ch04\batch02\BookProduct
+EXPECTED;
+
+        self::assertEquals($expected, $val);
+
     }
 }
