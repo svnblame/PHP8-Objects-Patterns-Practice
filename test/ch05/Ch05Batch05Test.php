@@ -111,4 +111,12 @@ EXPECTED;
 
         self::assertEquals($expected, $val);
     }
+
+    public function testRunClassMethods()
+    {
+        $val = $this->capture(function () {
+            Runner::runClassMethods();
+        });
+        self::assertMatchesRegularExpression("/getProducerFirstName/", $val);
+    }
 }
