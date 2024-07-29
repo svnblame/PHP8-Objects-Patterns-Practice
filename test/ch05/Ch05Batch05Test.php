@@ -125,4 +125,10 @@ EXPECTED;
         $val = $this->capture(function () { Runner::runClassVars(); });
         self::assertMatchesRegularExpression("/coverUrl/", $val);
     }
+
+    public function testRunGetParentClass()
+    {
+        $val = $this->capture(function() { Runner::runGetParentClass(); });
+        self::assertEquals('popp\ch04\batch02\ShopProduct', $val);
+    }
 }

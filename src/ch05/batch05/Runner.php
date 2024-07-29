@@ -155,6 +155,12 @@ class Runner
         print_r(get_class_vars('\popp\ch05\batch05\CdProduct'));
     }
 
+    public static function runGetParentClass(): void
+    {
+        /* listing 05.53 */
+        print get_parent_class('\\popp\\ch04\\batch02\\BookProduct');
+    }
+
     public static function getProduct(): CdProduct
     {
         return new CdProduct(
