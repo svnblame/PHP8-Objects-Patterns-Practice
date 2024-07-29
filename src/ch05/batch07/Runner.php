@@ -55,4 +55,46 @@ class Runner
         $method = $class->getMethod('getSummaryLine');
         print ReflectionUtil::getMethodSource($method);
     }
+
+    public static function run8(): void
+    {
+        /* listing 05.74 */
+        $class  = new \ReflectionClass(CdProduct::class);
+
+        $method = $class->getMethod('__construct');
+        $params = $method->getParameters();
+
+        foreach ($params as $param) {
+            print ClassInfo::argData($param) . "\n";
+        }
+    }
+
+    public static function runInstantiateMethod():array
+    {
+        /* listing 05.68 */
+        $cd = new CdProduct('cd1', 'bob', 'bobbleson', 4, 50);
+        $className = CdProduct::class;
+
+        $method1 = new \ReflectionMethod("{$className}::__construct");   // class/method string
+        $method2 = new \ReflectionMethod($className, '__construct');   // class name and method name
+        $method3 = new \ReflectionMethod($cd, '__construct');   // object and method name
+
+        return [$method1, $method2, $method3];
+    }
+
+    public static function runInstantiateParameter()
+    {
+        /* listing 05.73 */
+        $className = CdProduct::class;
+
+        $param1 = new \ReflectionParameter([$className, '__construct'], 1);
+        $param2 = new \ReflectionParameter([$className, '__construct'], 'firstName');
+
+        $cd = new CdProduct('cd1', 'bob', 'bobbleson', 4, 50);
+        $param3 = new \ReflectionParameter([$cd, '__construct'], 1);
+        $param4 = new \ReflectionParameter([$cd, '__construct'], 'firstName');
+
+        return [$param1, $param2, $param3, $param4];
+    }
+
 }

@@ -39,4 +39,47 @@ class ClassInfo
 
         return $details;
     }
+
+    /* listing 05.75 */
+    public static function argData(\ReflectionParameter $arg) : string
+    {
+        $details = '';
+        $declaringClass = $arg->getDeclaringClass();
+        $name = $arg->getName();
+
+        $position = $arg->getPosition();
+        $details .= "\$$name has position $position\n";
+
+        if ($arg->hasType()) {
+            $type = $arg->getType();
+            $typeNames = [];
+
+            if ($type instanceof \ReflectionUnionType) {
+                $types = $type->getTypes();
+                foreach ($types as $type) {
+                    $typeNames[] = $type->getName();
+                }
+            } else {
+                $typeNames[] = $type->getName();
+            }
+
+            $typeName = implode('|', $typeNames);
+            $details .= "\$$name should be type $typeName\n";
+        }
+
+        if ($arg->isPassedByReference()) {
+            $details .= "\$$name is passed by reference\n";
+        }
+
+        if ($arg->isDefaultValueAvailable()) {
+            $def = $arg->getDefaultValue();
+            $details .= "\$$name has default: $def\n";
+        }
+
+        if ($arg->allowsNull()) {
+            $details .= "\$$name can be null\n";
+        }
+
+        return $details;
+    }
 }
