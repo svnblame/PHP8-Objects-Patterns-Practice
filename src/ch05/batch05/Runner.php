@@ -161,6 +161,11 @@ class Runner
         print get_parent_class('\\popp\\ch04\\batch02\\BookProduct');
     }
 
+    public static function runCallFunc(): mixed
+    {
+        return call_user_func('popp\ch05\batch05\myFunction');
+    }
+
     public static function getProduct(): CdProduct
     {
         return new CdProduct(
@@ -182,4 +187,9 @@ class Runner
             300
         );
     }
+}
+
+function myFunction(): string
+{
+    return 'myFunction';
 }

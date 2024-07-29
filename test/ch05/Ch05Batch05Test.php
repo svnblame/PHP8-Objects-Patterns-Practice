@@ -131,4 +131,10 @@ EXPECTED;
         $val = $this->capture(function() { Runner::runGetParentClass(); });
         self::assertEquals('popp\ch04\batch02\ShopProduct', $val);
     }
+
+    public function testRunCallFunc()
+    {
+        $val = Runner::runCallFunc();
+        self::assertEquals('myFunction', $val);
+    }
 }
