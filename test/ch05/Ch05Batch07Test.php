@@ -11,5 +11,8 @@ class Ch05Batch07Test extends BaseUnit
     {
         $val = $this->capture(function() { Runner::run2(); });
         self::assertMatchesRegularExpression('/getInstance/', $val);
+
+        $val = $this->capture(function() { Runner::run3(); });
+        self::assertMatchesRegularExpression('/producerFirstName/', $val);
     }
 }
