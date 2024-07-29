@@ -25,5 +25,7 @@ EXPECTED;
 
         self::assertEquals($expected, $val);
 
+        $val = $this->capture(function() { Runner::run5(); });
+        self::assertMatchesRegularExpression('/getSummaryLine/', $val);
     }
 }

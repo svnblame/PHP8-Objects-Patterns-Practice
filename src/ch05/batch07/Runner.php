@@ -7,24 +7,32 @@ use popp\ch04\batch02\CdProduct;
 
 class Runner
 {
-    public static function run2()
+    public static function run2(): void
     {
         /* listing 05.61 & 05.63 */
         $productClass = new \ReflectionClass(CdProduct::class);
         print $productClass;
     }
 
-    public static function run3()
+    public static function run3(): void
     {
         /* listing 05.62 */
         $cd = new CdProduct('cd1', 'bob', 'bobbleson', 4, 50);
         var_dump($cd);
     }
 
-    public static function run4()
+    public static function run4(): void
     {
         /* listing 05.65 */
         $productClass = new \ReflectionClass(CdProduct::class);
         print ClassInfo::getData($productClass);
+    }
+
+    public static function run5(): void
+    {
+        /* listing 05.67 */
+        print ReflectionUtil::getClassSource(
+            new \ReflectionClass(CdProduct::class)
+        );
     }
 }
