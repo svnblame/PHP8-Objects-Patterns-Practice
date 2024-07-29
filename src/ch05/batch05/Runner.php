@@ -177,6 +177,17 @@ class Runner
         }
     }
 
+    public static function runVarCall(): BookProduct
+    {
+        $product = self::getBookProduct();
+
+        /* listing 05.58 */
+        $method = 'setDiscount';
+        $product->$method(20);
+
+        return $product;
+    }
+
     public static function getProduct(): CdProduct
     {
         return new CdProduct(
