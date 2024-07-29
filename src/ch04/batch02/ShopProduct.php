@@ -77,7 +77,7 @@ class ShopProduct
         return $base;
     }
 
-    public static function getInstance(int $id, \PDO $pdo): ShopProduct 
+    public static function getInstance(int $id, \PDO $pdo): ?ShopProduct
     {
         $stmt = $pdo->prepare("select * from products where id=?");
         $result = $stmt->execute([$id]);
