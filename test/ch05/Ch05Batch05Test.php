@@ -137,4 +137,10 @@ EXPECTED;
         $val = Runner::runCallFunc();
         self::assertEquals('myFunction', $val);
     }
+
+    public function testRunCallablename()
+    {
+        $val = $this->capture(function() { Runner::runCallableName(); });
+        self::assertEquals('popp\ch05\batch05\CdProduct::getTitle', $val);
+    }
 }

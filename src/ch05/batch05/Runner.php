@@ -166,6 +166,17 @@ class Runner
         return call_user_func('popp\ch05\batch05\myFunction');
     }
 
+    public static function runCallableName(): void
+    {
+        $product = self::getProduct();
+        $method = 'getTitle';   // define a method name
+
+        /* listing 05.50 */
+        if (is_callable([$product, $method], false, $callableName)) {
+            print $callableName;
+        }
+    }
+
     public static function getProduct(): CdProduct
     {
         return new CdProduct(
