@@ -150,6 +150,11 @@ class Runner
         print_r(get_class_methods('\\popp\\ch04\\batch02\\BookProduct'));
     }
 
+    public static function runClassVars(): void
+    {
+        print_r(get_class_vars('\popp\ch05\batch05\CdProduct'));
+    }
+
     public static function getProduct(): CdProduct
     {
         return new CdProduct(

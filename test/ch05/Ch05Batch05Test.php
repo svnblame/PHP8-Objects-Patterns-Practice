@@ -119,4 +119,10 @@ EXPECTED;
         });
         self::assertMatchesRegularExpression("/getProducerFirstName/", $val);
     }
+
+    public function testRunClassVars()
+    {
+        $val = $this->capture(function () { Runner::runClassVars(); });
+        self::assertMatchesRegularExpression("/coverUrl/", $val);
+    }
 }
