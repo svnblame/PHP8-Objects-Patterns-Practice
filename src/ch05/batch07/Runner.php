@@ -35,4 +35,16 @@ class Runner
             new \ReflectionClass(CdProduct::class)
         );
     }
+
+    public static function run6(): void
+    {
+        /* listing 05.69 */
+        $productClass = new \ReflectionClass(CdProduct::class);
+        $methods = $productClass->getMethods();
+
+        foreach ($methods as $method) {
+            print ClassInfo::methodData($method);
+            print "\n----\n";
+        }
+    }
 }

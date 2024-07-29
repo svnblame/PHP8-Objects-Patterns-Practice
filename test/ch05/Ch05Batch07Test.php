@@ -27,5 +27,8 @@ EXPECTED;
 
         $val = $this->capture(function() { Runner::run5(); });
         self::assertMatchesRegularExpression('/getSummaryLine/', $val);
+
+        $val = $this->capture(function() { Runner::run6(); });
+        self::assertMatchesRegularExpression('/getDiscount is user defined/', $val);
     }
 }
