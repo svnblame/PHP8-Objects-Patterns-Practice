@@ -26,16 +26,16 @@ class ClassInfo
         $details = '';
         $name = $method->getName();
 
-        $details .= ($method->isUserDefined())    ? "$name is user defined\n"      : '';
-        $details .= ($method->isInternal())       ? "$name is built-in\n"          : '';
-        $details .= ($method->isAbstract())       ? "$name is an abstract class\n"          : '';
-        $details .= ($method->isPublic())         ? "$name is public\n"         : '';
-        $details .= ($method->isProtected())      ? "$name is protected\n"          : '';
-        $details .= ($method->isPrivate())        ? "$name is private\n"          : '';
-        $details .= ($method->isStatic())         ? "$name is static\n"          : '';
-        $details .= ($method->isFinal())          ? "$name is final\n"          : '';
-        $details .= ($method->isConstructor())    ? "$name is the constructor\n"          : '';
-        $details .= ($method->returnsReference()) ? "$name returns a reference (as opposed to a value)\n"          : '';
+        $details .= ($method->isUserDefined())    ? "$name is user defined\n"                             : '';
+        $details .= ($method->isInternal())       ? "$name is built-in\n"                                 : '';
+        $details .= ($method->isAbstract())       ? "$name is an abstract class\n"                        : '';
+        $details .= ($method->isPublic())         ? "$name is public\n"                                   : '';
+        $details .= ($method->isProtected())      ? "$name is protected\n"                                : '';
+        $details .= ($method->isPrivate())        ? "$name is private\n"                                  : '';
+        $details .= ($method->isStatic())         ? "$name is static\n"                                   : '';
+        $details .= ($method->isFinal())          ? "$name is final\n"                                    : '';
+        $details .= ($method->isConstructor())    ? "$name is the constructor\n"                          : '';
+        $details .= ($method->returnsReference()) ? "$name returns a reference (as opposed to a value)\n" : '';
 
         return $details;
     }

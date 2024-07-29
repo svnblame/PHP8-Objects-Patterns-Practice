@@ -15,4 +15,16 @@ class ReflectionUtil
 
         return implode(array_slice($lines, $from -1, $len));
     }
+
+    /* listing 05.71 */
+    public static function getMethodSource(\ReflectionMethod $method): string
+    {
+        $path = $method->getFileName();
+        $lines = @file($path);
+        $from = $method->getStartLine();
+        $to = $method->getEndLine();
+        $len = $to - $from + 1;
+
+        return implode(array_slice($lines, $from -1, $len));
+    }
 }

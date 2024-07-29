@@ -47,4 +47,12 @@ class Runner
             print "\n----\n";
         }
     }
+
+    public static function run7(): void
+    {
+        /* listing 05.72 */
+        $class  = new \ReflectionClass(CdProduct::class);
+        $method = $class->getMethod('getSummaryLine');
+        print ReflectionUtil::getMethodSource($method);
+    }
 }
