@@ -14,5 +14,16 @@ class Ch05Batch07Test extends BaseUnit
 
         $val = $this->capture(function() { Runner::run3(); });
         self::assertMatchesRegularExpression('/producerFirstName/', $val);
+
+        $val = $this->capture(function() { Runner::run4(); });
+        $expected = <<<EXPECTED
+popp\ch04\batch02\CdProduct is user defined
+popp\ch04\batch02\CdProduct can be instantiated
+popp\ch04\batch02\CdProduct can be cloned
+
+EXPECTED;
+
+        self::assertEquals($expected, $val);
+
     }
 }

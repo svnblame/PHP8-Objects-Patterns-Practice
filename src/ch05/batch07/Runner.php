@@ -20,4 +20,11 @@ class Runner
         $cd = new CdProduct('cd1', 'bob', 'bobbleson', 4, 50);
         var_dump($cd);
     }
+
+    public static function run4()
+    {
+        /* listing 05.65 */
+        $productClass = new \ReflectionClass(CdProduct::class);
+        print ClassInfo::getData($productClass);
+    }
 }
