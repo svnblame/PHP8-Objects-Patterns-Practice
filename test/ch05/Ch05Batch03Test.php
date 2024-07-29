@@ -5,7 +5,7 @@ namespace popp\test\ch05;
 use popp\test\BaseUnit;
 use popp\ch05\batch03\my\Outputter;
 
-class Batch03Test extends BaseUnit
+class Ch05Batch03Test extends BaseUnit
 {
     /**
      * @test
