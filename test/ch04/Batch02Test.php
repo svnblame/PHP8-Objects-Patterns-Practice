@@ -22,7 +22,7 @@ class Batch02Test extends BaseUnit
     public function testRunner() 
     {
         $val = $this->capture(function() { Runner::run(); });
-        // var_dump($val); echo PHP_EOL; die('DEAD');
+
         self::assertMatchesRegularExpression("/\\[title:.*?ShopProduct/", $val);
 
         $val = $this->capture(function() { Runner::run2(); });
