@@ -3,6 +3,7 @@
 namespace popp\ch05\batch09;
 
 use ReflectionClass;
+use ReflectionMethod;
 
 class Runner
 {
@@ -13,6 +14,17 @@ class Runner
 
         $attrs = $rpers->getAttributes();
 
+        foreach ($attrs as $attr) {
+            print $attr->getName() . "\n";
+        }
+    }
+
+    public static function runMethod1()
+    {
+        /* listing 05.87 */
+        $rpers = new ReflectionClass(Person::class);
+        $rmeth = $rpers->getMethod('setName');
+        $attrs = $rmeth->getAttributes();
         foreach ($attrs as $attr) {
             print $attr->getName() . "\n";
         }

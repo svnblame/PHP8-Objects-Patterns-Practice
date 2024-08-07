@@ -17,4 +17,16 @@ EXPECTED;
 
         self::assertEquals($expected, $val);
     }
+
+    public function testRunMethod1()
+    {
+        $val = $this->capture(function() { Runner::runMethod1(); });
+
+        $expected = <<<EXPECTED
+popp\ch05\batch09\moreinfo
+
+EXPECTED;
+
+        self::assertEquals($expected, $val);
+    }
 }
