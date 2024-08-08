@@ -8,7 +8,7 @@ class Person
 {
     /* listing 05.84 */
     private string $name;
-    private string $companyId;
+    private int $companyId;
     private string $department;
 
     /* listing 05.86 */
@@ -24,5 +24,20 @@ class Person
     {
         $this->companyId = $companyId;
         $this->department = $department;
+    }
+
+    public function getName() : string
+    {
+        return $this->name;
+    }
+
+    public function getCompanyId() : int
+    {
+        return $this->companyId;
+    }
+
+    public function getDepartment() : string
+    {
+        return $this->department;
     }
 }

@@ -2,6 +2,8 @@
 
 namespace popp\ch05\batch09;
 
+use JetBrains\PhpStorm\NoReturn;
+use ReflectionAttribute;
 use ReflectionClass;
 use ReflectionMethod;
 
@@ -41,6 +43,23 @@ class Runner
             foreach ($attr->getArguments() as $arg) {
                 print "  - $arg\n";
             }
+        }
+    }
+
+    /**
+     * @return void
+     */
+    #[NoReturn] public static function runMethod3(): void
+    {
+        /* listing 05.91 */
+        $rpers = new ReflectionClass(Person::class);
+        $rmeth = $rpers->getMethod('setInfo');
+        $attrs = $rmeth->getAttributes(ApiInfo::class, ReflectionAttribute::IS_INSTANCEOF);
+        foreach ($attrs as $attr) {
+            print $attr->getName() . "\n";
+            $attrObj = $attr->newInstance();
+            print "  - " . $attrObj->compInfo . "\n";
+            print "  - " . $attrObj->depInfo . "\n";
         }
     }
 }
