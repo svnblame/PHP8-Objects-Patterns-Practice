@@ -55,4 +55,16 @@ EXPECTED;
 
         self::assertEquals($expected, $val);
     }
+
+    public function testRunMethod4()
+    {
+        $val = $this->capture(function() { Runner::runMethod4(); });
+        $expected = <<<EXPECTED
+popp\ch05\batch09\ApiInfo
+  - The 3 digit company identifier
+  - A five character department tag
+
+EXPECTED;
+        self::assertEquals($expected, $val);
+    }
 }

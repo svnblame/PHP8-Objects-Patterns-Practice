@@ -54,7 +54,21 @@ class Runner
         /* listing 05.91 */
         $rpers = new ReflectionClass(Person::class);
         $rmeth = $rpers->getMethod('setInfo');
-        $attrs = $rmeth->getAttributes(ApiInfo::class, ReflectionAttribute::IS_INSTANCEOF);
+        $attrs = $rmeth->getAttributes();
+        foreach ($attrs as $attr) {
+            print $attr->getName() . "\n";
+            $attrObj = $attr->newInstance();
+            print "  - " . $attrObj->compInfo . "\n";
+            print "  - " . $attrObj->depInfo . "\n";
+        }
+    }
+
+    public static function runMethod4(): void
+    {
+        /* listing 05.92 */
+        $rpers = new ReflectionClass(Person::class);
+        $rmeth = $rpers->getMethod('setInfo');
+        $attrs = $rmeth->getAttributes(ApiInfo::class);
         foreach ($attrs as $attr) {
             print $attr->getName() . "\n";
             $attrObj = $attr->newInstance();
