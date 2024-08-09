@@ -22,6 +22,9 @@
         <testsuite name="ch05">
             <directory>test/ch05</directory>
         </testsuite>
+        <testsuite name="ch06">
+            <directory>test/ch06</directory>
+        </testsuite>
     </testsuites>
 
     <coverage cacheDirectory=".phpunit.cache/code-coverage"
