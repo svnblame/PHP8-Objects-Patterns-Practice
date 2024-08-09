@@ -76,4 +76,18 @@ class Runner
             print "  - " . $attrObj->depInfo . "\n";
         }
     }
+
+    public static function runMethod5(): void
+    {
+        /* listing 05.93 */
+        $rpers = new ReflectionClass(Person::class);
+        $rmeth = $rpers->getMethod('setInfo');
+        $attrs = $rmeth->getAttributes(ApiInfo::class, ReflectionAttribute::IS_INSTANCEOF);
+        foreach ($attrs as $attr) {
+            print $attr->getName() . "\n";
+            $attrObj = $attr->newInstance();
+            print "  - " . $attrObj->compInfo . "\n";
+            print "  - " . $attrObj->depInfo . "\n";
+        }
+    }
 }
