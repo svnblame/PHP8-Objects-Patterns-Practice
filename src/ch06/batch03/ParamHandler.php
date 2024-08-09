@@ -3,6 +3,9 @@
 namespace popp\ch06\batch03;
 
 /* listing 06.04 */
+
+use Exception;
+
 abstract class ParamHandler
 {
     protected array $params = [];
@@ -27,6 +30,9 @@ abstract class ParamHandler
         return $this->params;
     }
 
+    /**
+     * @throws Exception
+     */
     protected function openSource(string $flag): mixed
     {
         $fh = @fopen($this->source, $flag);

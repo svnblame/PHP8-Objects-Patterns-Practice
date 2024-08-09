@@ -31,6 +31,18 @@ class Ch06Batch03Test extends BaseUnit
         self::assertMatchesRegularExpression("|<val>val2</val>|", $txt);
         self::assertMatchesRegularExpression("|<val>val3</val>|", $txt);
 
+        $val = $this->capture(function() { Runner::run2(); });
+        // print $val
+
+        self::assertMatchesRegularExpression("/key1/", $val);
+        self::assertMatchesRegularExpression("/val1/", $val);
+
+        self::assertMatchesRegularExpression("/key2/", $val);
+        self::assertMatchesRegularExpression("/val2/", $val);
+
+        self::assertMatchesRegularExpression("/key3/", $val);
+        self::assertMatchesRegularExpression("/val3/", $val);
+
 
     }
 }
