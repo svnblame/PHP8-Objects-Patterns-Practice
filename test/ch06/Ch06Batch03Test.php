@@ -42,7 +42,5 @@ class Ch06Batch03Test extends BaseUnit
 
         self::assertMatchesRegularExpression("/key3/", $val);
         self::assertMatchesRegularExpression("/val3/", $val);
-
-
     }
 }
