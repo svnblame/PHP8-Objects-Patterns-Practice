@@ -30,4 +30,11 @@ class Ch08Batch02Test extends BaseUnit
         $expected = "lesson charge 20. Charge type: hourly rate\nlesson charge 30. Charge type: fixed rate\n";
         self::assertEquals($expected, $val);
     }
+
+    function testRunner2()
+    {
+        $val = $this->capture(function() { Runner::run2(); });
+        self::assertMatchesRegularExpression("/notification: new/", $val);
+        self::assertMatchesRegularExpression("/cost/", $val);
+    }
 }
