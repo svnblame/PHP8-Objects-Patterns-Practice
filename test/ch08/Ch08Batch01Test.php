@@ -20,4 +20,16 @@ class Ch08Batch01Test extends BaseUnit
         self::assertEquals($seminar->cost(), 15);
         self::assertEquals($seminar->chargeType(), 'hourly rate');
     }
+
+    public function testRunner()
+    {
+        $val = $this->capture(function() { Runner::run(); });
+        $expected = <<<EXPECTED
+30 (fixed rate)
+15 (hourly rate)
+
+EXPECTED;
+
+        self::assertEquals($expected, $val);
+    }
 }
