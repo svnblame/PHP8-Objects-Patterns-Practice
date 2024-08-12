@@ -7,6 +7,7 @@ use popp\ch08\batch02\TimedCostStrategy;
 use popp\ch08\batch02\Seminar;
 use popp\ch08\batch02\Lecture;
 use popp\ch08\batch02\FixedCostStrategy;
+use popp\ch08\batch02\Runner;
 
 class Ch08Batch02Test extends BaseUnit
 {
@@ -21,5 +22,12 @@ class Ch08Batch02Test extends BaseUnit
         self::assertEquals('fixed rate', $lecture->chargeType());
         self::assertEquals(4, $lecture->duration());
         self::assertEquals(30, $lecture->cost());
+    }
+
+    function testRunner()
+    {
+        $val = $this->capture(function() { Runner::run(); });
+        $expected = "lesson charge 20. Charge type: hourly rate\nlesson charge 30. Charge type: fixed rate\n";
+        self::assertEquals($expected, $val);
     }
 }
