@@ -2,7 +2,7 @@
 
 namespace popp\ch09\batch04;
 
-/* listing 09.12 & 09.13 */
+/* listing 09.11 & 09.12 & 09.13 */
 class Preferences
 {
     private array $props = [];
