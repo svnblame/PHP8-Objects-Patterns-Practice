@@ -17,5 +17,14 @@ popp\\ch09\\batch07\\BloggsApptEncoder
 EXPECTED;
 
         self::assertEquals($expected, $val);
+
+        $val = $this->capture(function() { Runner::run2(); });
+        $expected = <<<EXPECTED
+MegaCal header
+BloggsCal header
+
+EXPECTED;
+
+        self::assertEquals($expected, $val);
     }
 }

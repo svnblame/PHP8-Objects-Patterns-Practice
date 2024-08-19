@@ -19,4 +19,13 @@ class CommsManager
             default => new BloggsApptEncoder(),
         };
     }
+
+    /* listing 09.18 */
+    public function getHeaderText(): string
+    {
+        return match ($this->mode) {
+            self::MEGA => "MegaCal header\n",
+            default => "BloggsCal header\n",
+        };
+    }
 }
