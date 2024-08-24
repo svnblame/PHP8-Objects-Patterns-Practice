@@ -1,0 +1,28 @@
+<?php declare(strict_types = 1);
+
+namespace popp\test\ch09;
+
+use popp\test\BaseUnit;
+use popp\ch09\batch11\Runner;
+
+class Ch09Batch11Test extends BaseUnit {
+    public function testRunner()
+    {
+        $val = $this->capture(function() { Runner::run(); });
+
+        $expected = <<<EXPECTED
+popp\\ch09\\batch11\\EarthSea Object
+(
+)
+popp\\ch09\\batch11\\EarthPlains Object
+(
+)
+popp\\ch09\\batch11\\EarthForest Object
+(
+)
+
+EXPECTED;
+
+        self::assertEquals($expected, $val);
+    }
+}
