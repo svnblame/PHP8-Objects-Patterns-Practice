@@ -12,3 +12,6 @@ vendor/
 
 #### JetBrains
 .idea
+
+#### Log Files
+php_errors.log

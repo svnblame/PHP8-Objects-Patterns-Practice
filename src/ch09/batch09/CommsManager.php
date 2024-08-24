@@ -2,7 +2,7 @@
 
 namespace popp\ch09\batch09;
 
-/* listing 09.27 */
+/* listing 09.24 & listing 09.27 */
 abstract class CommsManager {
     abstract public function getHeaderText(): string;
     abstract public function getApptEncoder(): ApptEncoder;
