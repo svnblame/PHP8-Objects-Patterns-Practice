@@ -2,6 +2,7 @@
 
 namespace popp\ch09\batch08;
 
+/* listing 09.25 */
 class BloggsCommsManager extends CommsManager
 {
 
