@@ -25,4 +25,24 @@ EXPECTED;
 
         self::assertEquals($expected, $val);
     }
+
+    public function testRunner2()
+    {
+        $val = $this->capture(function() { Runner::run2(); });
+
+        $expected = <<<EXPECTED
+popp\\ch09\\batch11\\EarthSea Object
+(
+)
+popp\\ch09\\batch11\\MarsPlains Object
+(
+)
+popp\\ch09\\batch11\\EarthForest Object
+(
+)
+
+EXPECTED;
+
+        self::assertEquals($expected, $val);
+    }
 }
