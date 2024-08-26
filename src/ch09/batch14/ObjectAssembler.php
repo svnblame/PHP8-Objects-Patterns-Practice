@@ -26,7 +26,7 @@ class ObjectAssembler
                 $argClass = (string)$arg['inst'];
                 $args[(int)$arg['num']] = $argClass;
             }
-            /* /listing 09.59 */
+            /* listing 09.59 */
             if (isset($class->instance)) {
                 if (isset($class->instance[0]['inst'])) {
                     $resolvedName = (string)$class->instance[0]['inst'];
