@@ -41,4 +41,11 @@ class Ch09Batch14Test extends BaseUnit {
         $expected = $apptMaker->makeAppointment();
         self::assertEquals("Appointment data encoded in BloggsCal format\n", $expected);
     }
+
+    public function testLessNaiveEncoder()
+    {
+        $apptMaker = new AppointmentMaker2(new BloggsApptEncoder());
+        $expected = $apptMaker->makeAppointment();
+        self::assertEquals("Appointment data encoded in BloggsCal format\n", $expected);
+    }
 }
