@@ -1,9 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace popp\ch09\batch06;
 
-use popp\ch09\batch06\ApptEncoder;
-
+/* listing 09.16 */
 class BloggsApptEncoder extends ApptEncoder
 {
 
