@@ -13,4 +13,10 @@ class Ch09Batch14_1Test extends BaseUnit {
         $val = $this->capture(function() { Runner::run(); });
         self::assertEquals("Appointment data encoded in BloggsCal format\n", $val);
     }
+
+    public function testRunnerNotInConf()
+    {
+        $val = $this->capture(function() { Runner::run2(); });
+        self::assertEquals("Appointment data encoded in MegaCal format\n", $val);
+    }
 }
