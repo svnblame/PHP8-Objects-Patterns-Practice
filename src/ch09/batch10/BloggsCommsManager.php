@@ -2,6 +2,7 @@
 
 namespace popp\ch09\batch10;
 
+/* listing 09.31 */
 class BloggsCommsManager extends CommsManager
 {
     public function getHeaderText(): string
