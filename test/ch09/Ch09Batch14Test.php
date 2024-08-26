@@ -12,6 +12,7 @@ use popp\ch09\batch11\MarsPlains;
 use popp\ch09\batch11\Forest;
 use popp\ch09\batch11\EarthForest;
 use popp\ch09\batch14\AppointmentMaker2;
+use popp\ch09\batch14\AppointmentMaker;
 
 class Ch09Batch14Test extends BaseUnit {
     public function testRunner()
@@ -30,6 +31,13 @@ class Ch09Batch14Test extends BaseUnit {
         self::assertTrue($component->getForest() instanceof EarthForest);
 
         $apptMaker = $assembler->getComponent(AppointmentMaker2::class);
+        $expected = $apptMaker->makeAppointment();
+        self::assertEquals("Appointment data encoded in BloggsCal format\n", $expected);
+    }
+
+    public function testNaiveEncoder()
+    {
+        $apptMaker = new AppointmentMaker();
         $expected = $apptMaker->makeAppointment();
         self::assertEquals("Appointment data encoded in BloggsCal format\n", $expected);
     }
