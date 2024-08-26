@@ -1,14 +1,18 @@
 <?php declare(strict_types=1);
 
-namespace popp\ch09\batch11;
+namespace popp\ch09\batch12;
 
-/* listing 09.41 */
 class TerrainFactory {
     public function __construct(
         private Sea $sea,
         private Plains $plains,
         private Forest $forest
-    ) {}
+    )
+    {
+        $this->sea = $sea;
+        $this->plains = $plains;
+        $this->forest = $forest;
+    }
 
     public function getSea(): Sea
     {
