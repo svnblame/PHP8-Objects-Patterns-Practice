@@ -2,6 +2,7 @@
 
 namespace popp\test\ch09;
 
+use popp\ch09\batch14\AppointmentMaker;
 use popp\ch09\batch15\ObjectAssembler;
 use popp\test\BaseUnit;
 use popp\ch09\batch15\Runner;
@@ -26,13 +27,21 @@ class Ch09Batch15Test extends BaseUnit {
     {
         $assembler = new ObjectAssembler('src/ch09/batch15/objects.xml');
 
+        $apptMaker = $assembler->getComponent(AppointmentMaker::class);
+        self::assertInstanceOf(AppointmentMaker::class, $apptMaker);
+    }
+
+    public function testNoArgsDefinedInstance()
+    {
+        $assembler = new ObjectAssembler('src/ch09/batch15/objects.xml');
+
         $sea = $assembler->getComponent(Sea::class);
-        self::assertTrue($sea instanceof EarthSea);
+        self::assertInstanceOf(EarthSea::class, $sea);
 
         $plains = $assembler->getComponent(Plains::class);
-        self::assertTrue($plains instanceof MarsPlains);
+        self::assertInstanceOf(MarsPlains::class, $plains);
 
         $forest = $assembler->getComponent(Forest::class);
-        self::assertTrue($forest instanceof EarthForest);
+        self::assertInstanceOf(EarthForest::class, $forest);
     }
 }
