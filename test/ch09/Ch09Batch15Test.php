@@ -55,4 +55,12 @@ class Ch09Batch15Test extends BaseUnit {
         self::assertInstanceOf(MarsPlains::class, $terrainFactory->getPlains());
         self::assertInstanceOf(EarthForest::class, $terrainFactory->getForest());
     }
+
+    public function testAttributeSetter()
+    {
+        $assembler = new ObjectAssembler('src/ch09/batch15/objects.xml');
+        $apptMaker = $assembler->getComponent(AppointmentMaker::class);
+
+        self::assertEquals("Appointment data encoded in BloggsCal format\n", $apptMaker->makeAppointment());
+    }
 }
