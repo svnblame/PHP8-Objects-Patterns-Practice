@@ -4,6 +4,7 @@ namespace popp\test\ch09;
 
 use popp\ch09\batch14\AppointmentMaker;
 use popp\ch09\batch15\ObjectAssembler;
+use popp\ch09\batch15\TerrainFactory;
 use popp\test\BaseUnit;
 use popp\ch09\batch15\Runner;
 use popp\ch09\batch11\Sea;
@@ -43,5 +44,15 @@ class Ch09Batch15Test extends BaseUnit {
 
         $forest = $assembler->getComponent(Forest::class);
         self::assertInstanceOf(EarthForest::class, $forest);
+    }
+
+    public function testAttributeConstructor()
+    {
+        $assembler = new ObjectAssembler('src/ch09/batch15/objects.xml');
+        $terrainFactory = $assembler->getComponent(TerrainFactory::class);
+
+        self::assertInstanceOf(EarthSea::class, $terrainFactory->getSea());
+        self::assertInstanceOf(MarsPlains::class, $terrainFactory->getPlains());
+        self::assertInstanceOf(EarthForest::class, $terrainFactory->getForest());
     }
 }
