@@ -3,6 +3,7 @@
 namespace popp\test\ch09;
 
 use popp\ch09\batch14\AppointmentMaker;
+use popp\ch09\batch15\AppointmentMaker2;
 use popp\ch09\batch15\ObjectAssembler;
 use popp\ch09\batch15\TerrainFactory;
 use popp\test\BaseUnit;
@@ -68,5 +69,12 @@ class Ch09Batch15Test extends BaseUnit {
     {
         $val = $this->capture(function() { Runner::run3(); });
         self::assertEquals("Appointment data encoded in BloggsCal format\n", $val);
+    }
+
+    public function testDefinedNoArgsNoInstance()
+    {
+        $assembler = new ObjectAssembler('src/ch09/batch15/objects.xml');
+        $apptMaker = $assembler->getComponent(AppointmentMaker2::class);
+        self::assertEquals("Appointment data encoded in BloggsCal format\n", $apptMaker->makeAppointment());
     }
 }
