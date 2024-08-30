@@ -63,4 +63,10 @@ class Ch09Batch15Test extends BaseUnit {
 
         self::assertEquals("Appointment data encoded in BloggsCal format\n", $apptMaker->makeAppointment());
     }
+
+    public function testAttributeSetterRunner()
+    {
+        $val = $this->capture(function() { Runner::run3(); });
+        self::assertEquals("Appointment data encoded in BloggsCal format\n", $val);
+    }
 }
