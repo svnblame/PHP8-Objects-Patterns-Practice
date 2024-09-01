@@ -7,6 +7,7 @@ use popp\ch10\batch04\Tank;
 use popp\ch10\batch04\Soldier;
 use popp\ch10\batch04\Army;
 use popp\ch10\batch04\Archer;
+use popp\ch10\batch04\Runner;
 
 class Ch10Batch04Test extends BaseUnit
 {
@@ -38,5 +39,11 @@ class Ch10Batch04Test extends BaseUnit
         } catch (\Exception $e) {
             self::assertEquals("popp\\ch10\\batch04\\Archer is a leaf", $e->getMessage());
         }
+    }
+
+    public function testRunner()
+    {
+        $val = $this->capture(function() { Runner::run(); });
+        self::assertEquals("attacking with strength: 60\n", $val);
     }
 }
