@@ -26,4 +26,17 @@ class Ch10Batch03Test extends BaseUnit {
         $army->removeUnit($tank2);
         self::assertCount(2, $army->getUnits());
     }
+
+    public function testArcher()
+    {
+        $archer = new Archer();
+        $tank = new Tank();
+
+        try {
+            $archer->addUnit($tank);
+            self::fail("Exception should have been thrown");
+        } catch (\Exception $ex) {
+            self::assertEquals("popp\\ch10\\batch03\\Archer is a leaf", $ex->getMessage());
+        }
+    }
 }
