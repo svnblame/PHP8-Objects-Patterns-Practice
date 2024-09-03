@@ -23,6 +23,9 @@ class Ch10Batch06Test extends BaseUnit {
         });
         self::assertEquals("4", $val3);
 
-
+        $val4 = $this->capture(function() {
+            Runner::run4();
+        });
+        self::assertEquals("0", $val4);
     }
 }
