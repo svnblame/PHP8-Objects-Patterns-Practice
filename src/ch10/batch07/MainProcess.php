@@ -2,6 +2,7 @@
 
 namespace popp\ch10\batch07;
 
+/* listing 10.32 */
 class MainProcess extends ProcessRequest
 {
     public function process(RequestHelper $request): void
