@@ -11,7 +11,11 @@ class Ch10Batch06Test extends BaseUnit {
         $val = $this->capture(function() {
             Runner::run();
         });
-
         self::assertEquals("-2", $val);
+
+        $val2 = $this->capture(function() {
+            Runner::run2();
+        });
+        self::assertEquals("2", $val2);
     }
 }
