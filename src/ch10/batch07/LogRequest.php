@@ -2,6 +2,7 @@
 
 namespace popp\ch10\batch07;
 
+/* listing 10.34 */
 class LogRequest extends DecorateProcess
 {
     public function process(RequestHelper $request): void
