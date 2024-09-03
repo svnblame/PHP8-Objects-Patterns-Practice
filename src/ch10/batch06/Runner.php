@@ -17,5 +17,10 @@ class Runner {
         print $tile->getWealthFactor(); // 2
     }
 
-
+    public static function run3(): void
+    {
+        /* listing 10.28 */
+        $tile = new DiamondDecorator(new Plains());
+        print $tile->getWealthFactor(); // 4
+    }
 }
