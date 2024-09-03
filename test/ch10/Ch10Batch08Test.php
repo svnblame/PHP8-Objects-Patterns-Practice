@@ -18,5 +18,10 @@ class Ch10Batch08Test extends BaseUnit {
         self::assertMatchesRegularExpression("/234/", $val);
         self::assertMatchesRegularExpression("/532/", $val);
 
+        $val = $this->capture(function() {
+            Runner::run2();
+        });
+
+        print $val;
     }
 }
