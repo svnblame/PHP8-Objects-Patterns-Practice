@@ -11,4 +11,10 @@ class Ch11Batch01Test extends BaseUnit {
         $val = $this->capture(function() { Runner::run4(); });
         self::assertMatchesRegularExpression('/nobody/', $val);
     }
+
+    public function testRunner()
+    {
+        $val = $this->capture(function() { Runner::run(); });
+        self::assertEquals("four\n", $val);
+    }
 }
