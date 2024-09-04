@@ -16,5 +16,8 @@ class Ch11Batch01Test extends BaseUnit {
     {
         $val = $this->capture(function() { Runner::run(); });
         self::assertEquals("four\n", $val);
+
+        $val = $this->capture(function() { Runner::run2(); });
+        self::assertEquals("four\nfour\nfive\nfive\n", $val);
     }
 }

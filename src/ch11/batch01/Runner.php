@@ -21,4 +21,22 @@ class Runner {
         // contains: "print file_get_contents('/etc/passwd');"
         eval($form_input);
     }
+
+    public static function run2(): void
+    {
+        /* listing 11.07 */
+        $context = new InterpreterContext();
+        $myVar = new VariableExpression('input', 'four');
+        $myVar->interpret($context);
+        print $context->lookup($myVar) . "\n";   // output: four
+
+        $newVar = new VariableExpression('input');
+        $newVar->interpret($context);
+        print $context->lookup($newVar) . "\n";   // output: four
+
+        $myVar->setValue('five');
+        $myVar->interpret($context);
+        print $context->lookup($myVar) . "\n";   // output: five
+        print $context->lookup($myVar) . "\n";   // output: five
+    }
 }
