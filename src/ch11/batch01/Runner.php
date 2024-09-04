@@ -39,4 +39,27 @@ class Runner {
         print $context->lookup($myVar) . "\n";   // output: five
         print $context->lookup($myVar) . "\n";   // output: five
     }
+
+    public static function run3(): void
+    {
+        /* listing 11.12 */
+        $context = new InterpreterContext();
+        $input = new VariableExpression('input');
+        $statement = new BooleanOrExpression(
+            new BooleanEqualsExpression($input, new LiteralExpression('four')),
+            new BooleanEqualsExpression($input, new LiteralExpression('4'))
+        );
+
+        /* listing 11.13 */
+        foreach (["four", "4", "52"] as $val) {
+            $input->setValue($val);
+            print "$val:\n";
+            $statement->interpret($context);
+            if ($context->lookup($statement)) {
+                print "top marks\n\n";
+            } else {
+                print "dunce hat on\n\n";
+            }
+        }
+    }
 }
