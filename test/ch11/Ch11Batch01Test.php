@@ -1,0 +1,14 @@
+<?php
+
+namespace ch11;
+
+use popp\test\BaseUnit;
+use popp\ch11\batch01\Runner;
+
+class Ch11Batch01Test extends BaseUnit {
+    public function testEval()
+    {
+        $val = $this->capture(function() { Runner::run4(); });
+        self::assertMatchesRegularExpression('/nobody/', $val);
+    }
+}
