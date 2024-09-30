@@ -6,12 +6,13 @@ use PHPUnit\Framework\TestCase;
 
 class BaseUnit extends TestCase 
 {
-    function capture(callable $callme)
+    function capture(callable $callme): bool|string
     {
         ob_start();
         $callme();
         $output = ob_get_contents();
         ob_end_clean();
+
         return $output;
     }
 
