@@ -12,6 +12,7 @@ class Ch11Batch05Test extends BaseUnit {
         self::assertMatchesRegularExpression('|sending mail to sysadmin|', $val);
         self::assertMatchesRegularExpression('|add login data to log|', $val);
 
-        // test run2() ...
+        $val = $this->capture(function() { Runner::run2(); });
+        self::assertMatchesRegularExpression('|doing something with status info|', $val);
     }
 }
