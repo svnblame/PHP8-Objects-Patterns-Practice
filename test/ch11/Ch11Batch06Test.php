@@ -9,8 +9,12 @@ class Ch11Batch06Test extends BaseUnit {
     public function testRunner()
     {
         $val = $this->capture(function() { Runner::run(); });
-
         self::assertMatchesRegularExpression("|sending mail to sysadmin|", $val);
+    }
 
+    public function testRunner2()
+    {
+        $val = $this->capture(function() { Runner::run2(); });
+        self::assertEquals("", $val);
     }
 }
