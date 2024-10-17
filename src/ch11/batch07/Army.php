@@ -2,6 +2,7 @@
 
 namespace popp\ch11\batch07;
 
+/* listing 11.37 */
 class Army extends CompositeUnit
 {
     public function bombardStrength(): int
