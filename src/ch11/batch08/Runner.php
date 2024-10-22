@@ -18,7 +18,7 @@ class Runner {
 
     public static function run2(): void
     {
-        /* listing 11.45 */
+        /* listing 11.47 */
         $main_army = new Army();
         $main_army->addUnit(new Archer());
         $main_army->addUnit(new LaserCannonUnit());
