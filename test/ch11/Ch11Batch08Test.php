@@ -18,20 +18,19 @@ popp\ch11\batch08\Army: bombard: 50
 
 OUT;
         self::assertEquals($out, $val);
-        //print $val;
 
 //        $val = $this->capture(function() { Runner::run2(); });
-
-        $out = <<<OUT
-Tax levied for popp\\ch11\\batch08\\Army: 1
-Tax levied for popp\\ch11\\batch08\\Archer: 2
-Tax levied for popp\\ch11\\batch08\\LaserCanonUnit: 1
-Tax levied for popp\\ch11\\batch08\\Cavalry: 3
-TOTAL: 7
-
-OUT;
-
-        //print $val;
+//
+//        $out = <<<OUT
+//Tax levied for popp\\ch11\\batch08\\Army: 1
+//Tax levied for popp\\ch11\\batch08\\Archer: 2
+//Tax levied for popp\\ch11\\batch08\\LaserCanonUnit: 1
+//Tax levied for popp\\ch11\\batch08\\Cavalry: 3
+//TOTAL: 7
+//
+//OUT;
+//
+//        //print $val;
 //        self::assertEquals($out, $val);
     }
 }
