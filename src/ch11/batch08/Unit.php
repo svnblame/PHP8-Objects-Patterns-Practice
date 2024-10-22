@@ -2,7 +2,7 @@
 
 namespace popp\ch11\batch08;
 
-/* listing 11.43 */
+/* listing 11.41 */
 abstract class Unit {
     protected int $health = 10;
     protected int $depth  = 0;
