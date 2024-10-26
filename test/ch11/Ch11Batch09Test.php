@@ -14,4 +14,16 @@ class Ch11Batch09Test extends BaseUnit {
 OUT;
         self::assertEquals($out, $val);
     }
+
+    public function testRunner2()
+    {
+        $val = $this->capture(function() { Runner::run2(); });
+
+        $out = <<<OUT
+sending bob@bob.com: my brain: all about my brain
+
+OUT;
+        self::assertEquals($out, $val);
+
+    }
 }

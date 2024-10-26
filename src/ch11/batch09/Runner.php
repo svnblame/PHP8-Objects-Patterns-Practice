@@ -16,4 +16,18 @@ class Runner {
 
         print $context->getError();
     }
+
+    public static function run2(): void
+    {
+        $controller = new Controller();
+        $context = $controller->getContext();
+
+        $context->addParam('action', 'feedback');
+        $context->addParam('email', 'bob@bob.com');
+        $context->addParam('topic', 'my brain');
+        $context->addParam('msg', 'all about my brain');
+        $controller->process();
+
+        print $context->getError();
+    }
 }
