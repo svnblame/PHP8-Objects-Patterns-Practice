@@ -23,5 +23,9 @@ class Ch11Batch10Test extends BaseUnit {
         self::assertEquals(30, $health);
     }
 
-
+    public function testRunner()
+    {
+        $this->expectException(\Error::class);
+        Runner::run();
+    }
 }

@@ -3,7 +3,7 @@
 namespace popp\ch11\batch10;
 
 class Runner {
-    public static function run()
+    public static function run(): void
     {
         /* listing 11.58 */
         $acquirer = new UnitAcquisition();
