@@ -1,0 +1,27 @@
+<?php declare(strict_types=1);
+
+namespace popp\ch11\batch11;
+
+use popp\ch11\batch08\Army;
+use popp\ch11\batch08\Archer;
+use popp\ch11\batch08\Cavalry;
+use popp\ch11\batch08\LaserCannonUnit;
+
+class UnitAcquisition {
+    public function getUnits(int $x, int $y): array
+    {
+        // 1. looks up x and y in local data and gets a list of unit ids
+        // 2. goes off to a data store and get full unit data
+
+        // here's some fake data
+        $army = new Army();
+        $army->addUnit(new Archer());
+
+        return [
+            new Cavalry(),
+            null,
+            new LaserCannonUnit(),
+            $army
+        ];
+    }
+}
