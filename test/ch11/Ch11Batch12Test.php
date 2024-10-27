@@ -5,6 +5,7 @@ namespace ch11;
 use popp\test\BaseUnit;
 use popp\ch11\batch12\UnitAcquisition;
 use popp\ch11\batch12\TileForces;
+use popp\ch11\batch12\Runner;
 
 class Ch11Batch12Test extends BaseUnit {
     public function testTileForces()
@@ -17,5 +18,13 @@ class Ch11Batch12Test extends BaseUnit {
 
         self::assertEquals(50, $power);
         self::assertEquals(30, $health);
+    }
+
+    public function testRunner()
+    {
+        $val = $this->capture(function() { Runner::run(); });
+
+        $out = "null - no action\n";
+        self::assertEquals($out, $val);
     }
 }
