@@ -8,6 +8,7 @@ use popp\ch12\batch05\AppException;
 use popp\ch12\batch05\TestRequest;
 use popp\ch12\batch05\Registry;
 use popp\ch12\batch05\Conf;
+use popp\ch12\batch05\ApplicationHelper;
 
 class Ch12Batch05Test extends BaseUnit {
     public function testRunner()
@@ -20,7 +21,8 @@ class Ch12Batch05Test extends BaseUnit {
         self::assertInstanceOf(AppException::class, $e);
     }
 
-    public function testRegistry() {
+    public function testRegistry()
+    {
         $request  = new TestRequest();
         $registry = Registry::instance();
         $registry->setRequest($request);
@@ -29,5 +31,14 @@ class Ch12Batch05Test extends BaseUnit {
         self::assertInstanceOf(Conf::class, $conf);
     }
 
+    public function testApplicationHelper()
+    {
+        $helper = new ApplicationHelper();
+        $helper->init();
 
+        $registry = Registry::instance();
+        $dsn = $registry->getDSN();
+
+        self::assertEquals("sqlite:/Users/gene/code/p8opp/src/ch12/batch05/data/woo.db", $dsn);
+    }
 }
