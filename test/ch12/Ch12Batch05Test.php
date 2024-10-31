@@ -28,4 +28,6 @@ class Ch12Batch05Test extends BaseUnit {
         $conf = $registry->getConf();
         self::assertInstanceOf(Conf::class, $conf);
     }
+
+
 }
