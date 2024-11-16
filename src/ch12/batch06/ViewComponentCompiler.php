@@ -4,7 +4,7 @@ namespace popp\ch12\batch06;
 
 /* listing 12.23 */
 class ViewComponentCompiler {
-    private static $defaultCmd = DefaultCommand::class;
+    private static string $defaultCmd = DefaultCommand::class;
 
     public function parseFile(string $file): Conf
     {
@@ -13,6 +13,9 @@ class ViewComponentCompiler {
         return $this->parse($options);
     }
 
+    /**
+     * @throws AppException
+     */
     public function parse(\SimpleXMLElement $options): Conf {
         $conf = new Conf();
 
@@ -26,17 +29,18 @@ class ViewComponentCompiler {
             $this->processView($pathObj, 0, $command);
 
             if (isset($command->status) && isset($command->status['value'])) {
-                foreach ($command->status as $statusl) {
-                    $status = (string) $statusl['value'];
+                foreach ($command->status as $s) {
+                    $status = (string) $s['value'];
                     $statusVal = constant(Command::class . '::' . $status);
 
                     if ($statusVal === null) {
                         throw new AppException("Unknown status: {$status}");
                     }
 
-                    $this->processView($pathObj, $statusVal, $statusl);
+                    $this->processView($pathObj, $statusVal, $s);
                 }
             }
+
             $conf->set($path, $pathObj);
         }
 
