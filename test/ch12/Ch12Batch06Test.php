@@ -2,6 +2,7 @@
 
 namespace ch12;
 
+use popp\ch12\batch06\ApplicationHelper;
 use popp\test\BaseUnit;
 use popp\ch12\batch06\Runner;
 use popp\ch12\batch06\TestRequest;
@@ -23,6 +24,9 @@ class Ch12Batch06Test extends BaseUnit {
         self::assertMatchesRegularExpression('/Welcome to WOO/', $val);
     }
 
+    /**
+     * @throws \Exception
+     */
     public function testRegistry()
     {
         $request = new TestRequest();
@@ -34,5 +38,16 @@ class Ch12Batch06Test extends BaseUnit {
 
         $request = $registry->getRequest();
         self::assertTrue($request instanceof Request);
+    }
+
+    public function testApplicationHelper()
+    {
+        $helper = new ApplicationHelper();
+        $helper->init();
+
+        $registry = Registry::instance();
+        $dsn = $registry->getDSN();
+
+        self::assertEquals("sqlite:/Users/gene/code/p8opp/src/ch12/batch06/data/woo.db", $dsn);
     }
 }
