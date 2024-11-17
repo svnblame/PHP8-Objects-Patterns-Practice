@@ -1,16 +1,11 @@
 <?php
 
-/*
-<!-- listing 12.34 -->
-<?php
-<!-- /listing 12.34 -->
-*/
 /* listing 12.34 */
+
 namespace popp\ch12\batch07;
 
-/* /listing 12.34 */
 require_once(__DIR__ . "/../../../vendor/autoload.php");
-/* listing 12.34 */
+
 try {
     $venuemapper = new VenueMapper();
     $venues = $venuemapper->findAll();
