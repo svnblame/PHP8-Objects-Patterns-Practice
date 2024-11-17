@@ -11,7 +11,7 @@ class AddVenue extends Command
 
         if (is_null($name)) {
             $request->addFeedback('no name provided');
-            return self::CMD_INSUFFICIENT_DATA
+            return self::CMD_INSUFFICIENT_DATA;
         } else {
             // do some stuff
             $request->addFeedback("'{$name}' added");
