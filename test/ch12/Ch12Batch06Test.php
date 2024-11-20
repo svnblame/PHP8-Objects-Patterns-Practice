@@ -28,7 +28,7 @@ class Ch12Batch06Test extends BaseUnit {
     {
         $val = $this->capture(function() { Runner::run(); });
 
-        self::assertMatchesRegularExpression('/Welcome to WOO/', $val);
+        self::assertMatchesRegularExpression('/this is main/', $val);
     }
 
     /**
