@@ -1,6 +1,7 @@
 <!-- listing 12.21 -->
 <woo-routing>
     <control>
+
         <command path="/" class="\popp\ch12\batch06\DefaultCommand">
             <view name="main" />
             <status value="CMD_ERROR">
@@ -8,26 +9,26 @@
             </status>
         </command>
 
-        <command path="/listVenues" class="\popp\ch12\batch06\ListVenues">
-            <view name="listVenues" />
+        <command path="/listvenues" class="\popp\ch12\batch06\ListVenues">
+            <view name="listvenues" />
         </command>
 
-        <command path="quickAddVenue" class="\popp\ch12\batch06\AddVenue">
-            <view name="quickAdd" />
+        <command path="/quickaddvenue" class="\popp\ch12\batch06\AddVenue">
+            <view name="quickadd" />
         </command>
 
         <!-- listing 12.22 -->
-        <command path="/addVenue" class="\popp\ch12\batch06\AddVenue">
-            <view name="addVenue" />
+        <command path="/addvenue" class="\popp\ch12\batch06\AddVenue">
+            <view name="addvenue" />
             <status value="CMD_OK">
-                <forward path="/addSpace" />
+                <forward path="/addspace" />
             </status>
         </command>
-
-        <command path="/addSpace" class="\popp\ch12\batch06\AddSpace">
-            <view name="addSpace" />
+        <!-- /listing 12.22 -->
+        <command path="/addspace" class="\popp\ch12\batch06\AddSpace">
+            <view name="addspace" />
             <status value="CMD_OK">
-                <forward path="/listVenues" />
+                <forward path="/listvenues" />
             </status>
         </command>
 

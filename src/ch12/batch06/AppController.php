@@ -40,6 +40,7 @@ class AppController {
         $reg = Registry::instance();
         $commands = $reg->getCommands();
         $path = $request->getPath();
+
         $descriptor = $commands->get($path);
 
         if (is_null($descriptor)) {
