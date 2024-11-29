@@ -6,7 +6,7 @@ class WordParse extends Parser
 {
     private ?string $word;
 
-    public function __construct(string $word = null, string $name = null)
+    public function __construct(string|null $word = null, string|null $name = null)
     {
         parent::__construct($name);
         $this->word = $word;

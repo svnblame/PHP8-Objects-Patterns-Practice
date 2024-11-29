@@ -6,7 +6,7 @@ class CharacterParse extends Parser
 {
     private string $char;
 
-    public function __construct(string $char, string $name = null)
+    public function __construct(string $char, string|null $name = null)
     {
         parent::__construct($name);
         $this->char = $char;

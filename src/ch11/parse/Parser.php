@@ -8,7 +8,7 @@ abstract class Parser {
     protected bool $discard = false;
     protected string $name;
 
-    public function __construct(string $name = null)
+    public function __construct(string|null $name = null)
     {
         if (is_null($name)) {
             $this->name = get_class($this);
