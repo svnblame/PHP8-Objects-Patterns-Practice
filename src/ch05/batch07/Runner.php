@@ -2,7 +2,6 @@
 
 namespace popp\ch05\batch07;
 
-use popp\ch04\batch02\BookProduct;
 use popp\ch04\batch02\CdProduct;
 
 class Runner
@@ -75,14 +74,17 @@ class Runner
         $cd = new CdProduct('cd1', 'bob', 'bobbleson', 4, 50);
         $className = CdProduct::class;
 
-        $method1 = new \ReflectionMethod("{$className}::__construct");   // class/method string
-        $method2 = new \ReflectionMethod($className, '__construct');   // class name and method name
-        $method3 = new \ReflectionMethod($cd, '__construct');   // object and method name
+        $method1 = \ReflectionMethod::createFromMethodName("popp\ch04\batch02\CdProduct::__construct");   // class/method string
+        $method2 = \ReflectionMethod::createFromMethodName("popp\ch04\batch02\CdProduct::__construct");   // class name and method name
+        $method3 = \ReflectionMethod::createFromMethodName("popp\ch04\batch02\CdProduct::__construct");   // object and method name
 
         return [$method1, $method2, $method3];
     }
 
-    public static function runInstantiateParameter()
+    /**
+     * @throws \ReflectionException
+     */
+    public static function runInstantiateParameter(): array
     {
         /* listing 05.73 */
         $className = CdProduct::class;

@@ -9,7 +9,7 @@ class Address
     private string $number;
     private string $street;
 
-    public function __construct(string $maybenumber, string $maybestreet = null)
+    public function __construct(string $maybenumber, string|null $maybestreet = null)
     {
         if (is_null($maybestreet)) {
             $this->streetaddress = $maybenumber;
