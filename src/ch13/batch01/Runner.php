@@ -62,6 +62,24 @@ class Runner
         }
     }
 
+    public static function run4(): void
+    {
+        Registry::reset();
+
+        /* listing 13.11 */
+        $genVenueCollection = new GeneratorVenueCollection();
+        $genVenueCollection->add(new Venue(-1, "Loud and Thumping"));
+        $genVenueCollection->add(new Venue(-1, "Eeezy"));
+        $genVenueCollection->add(new Venue(-1, "Duck and Badger"));
+
+        $generator = $genVenueCollection->getGenerator();
+
+        foreach ($generator as $venue) {
+            print_r($venue);
+        }
+
+    }
+
     private static function setup(): void
     {
         $config = __DIR__ . "/data/woo_options.ini";

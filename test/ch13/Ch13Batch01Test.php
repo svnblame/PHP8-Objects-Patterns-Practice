@@ -29,4 +29,13 @@ class Ch13Batch01Test extends BaseUnit {
         $str = "Loud and Thumping\nEeezy\nDuck and Badger\n";
         self::assertEquals($str, $val);
     }
+
+    public function testGeneratorCollection()
+    {
+        $val = $this->capture(function() { Runner::run4(); });
+
+        self::assertMatchesRegularExpression("/Loud and Thumping/", $val);
+        self::assertMatchesRegularExpression("/Eeezy/", $val);
+        self::assertMatchesRegularExpression("/Duck and Badger/", $val);
+    }
 }

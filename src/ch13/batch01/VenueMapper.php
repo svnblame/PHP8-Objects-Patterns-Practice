@@ -47,7 +47,6 @@ class VenueMapper extends Mapper
         return $this->selectStmt;
     }
 
-    /* listing 13.03 */
     protected function selectAllStmt(): \PDOStatement
     {
         return $this->selectAllStmt;
