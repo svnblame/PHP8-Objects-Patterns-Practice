@@ -45,6 +45,23 @@ class Runner
         print_r($venue);
     }
 
+    public static function run3(): void
+    {
+        Registry::reset();
+
+        /* listing 13.09 */
+        $registry = Registry::instance();
+
+        $collection = $registry->getVenueCollection();
+        $collection->add(new Venue(-1, "Loud and Thumping"));
+        $collection->add(new Venue(-1, "Eeezy"));
+        $collection->add(new Venue(-1, "Duck and Badger"));
+
+        foreach ($collection as $venue) {
+            print $venue->getName() . "\n";
+        }
+    }
+
     private static function setup(): void
     {
         $config = __DIR__ . "/data/woo_options.ini";
