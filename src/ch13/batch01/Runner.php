@@ -23,7 +23,29 @@ class Runner
         print_r($venue);
     }
 
-    private static function setup()
+    public static function run2(): void
+    {
+        // set up configuration
+        self::setup();
+
+        /* listing 13.05 */
+        $mapper = new VenueMapper();
+        $venue = new Venue(-1, 'The Likey Lounge');
+        // add the object to the database
+        $mapper->insert($venue);
+        // find the object again - just to prove it works!
+        $venue = $mapper->find($venue->getId());
+        print_r($venue);
+        // alter our object
+        $venue->setName('The Bibble Beer Likey Lounge');
+        // call update to enter the amended data
+        $mapper->update($venue);
+        // once again, go back to the database to prove it worked
+        $venue = $mapper->find($venue->getId());
+        print_r($venue);
+    }
+
+    private static function setup(): void
     {
         $config = __DIR__ . "/data/woo_options.ini";
         $options = parse_ini_file($config, true);

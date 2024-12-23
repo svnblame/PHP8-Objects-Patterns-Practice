@@ -13,4 +13,13 @@ class Ch13Batch01Test extends BaseUnit {
         self::assertMatchesRegularExpression('/Venue Object/', $val);
         self::assertMatchesRegularExpression('/The Likey Lounge/', $val);
     }
+
+    public function testVenueMapper2()
+    {
+        $val = $this->capture(function() { Runner::run2(); });
+
+        self::assertMatchesRegularExpression('/Venue Object/', $val);
+        self::assertMatchesRegularExpression('/The Likey Lounge/', $val);
+        self::assertMatchesRegularExpression('/The Bibble Beer Likey Lounge/', $val);
+    }
 }
