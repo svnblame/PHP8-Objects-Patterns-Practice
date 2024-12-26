@@ -27,6 +27,7 @@ class Ch13Batch01Test extends BaseUnit {
     {
         $val = $this->capture(function() { Runner::run3(); });
         $str = "Loud and Thumping\nEeezy\nDuck and Badger\n";
+
         self::assertEquals($str, $val);
     }
 
@@ -37,5 +38,13 @@ class Ch13Batch01Test extends BaseUnit {
         self::assertMatchesRegularExpression("/Loud and Thumping/", $val);
         self::assertMatchesRegularExpression("/Eeezy/", $val);
         self::assertMatchesRegularExpression("/Duck and Badger/", $val);
+    }
+
+    public function testRunner()
+    {
+        $val = $this->capture(function() { Runner::run5(); });
+
+        self::assertMatchesRegularExpression("/The big stage/", $val);
+        self::assertMatchesRegularExpression("/The room downstairs/", $val);
     }
 }

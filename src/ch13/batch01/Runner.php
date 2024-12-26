@@ -77,7 +77,29 @@ class Runner
         foreach ($generator as $venue) {
             print_r($venue);
         }
+    }
 
+    /**
+     * @throws AppException
+     */
+    public static function run5(): void
+    {
+        self::setup();
+        Registry::reset();
+        $registry = Registry::instance();
+
+        $venue = new Venue(-1, 'Eeezy');
+        $collection = $registry->getSpaceCollection();
+        $collection->add(new Space(-1, 'The big stage', $venue));
+
+        $venue->setSpaces($collection);
+        $venue->addSpace(new Space(-1, 'The room downstairs'));
+
+        $collection2 = $venue->getSpaces();
+
+        foreach ($collection2 as $space) {
+            print_r($space);
+        }
     }
 
     private static function setup(): void

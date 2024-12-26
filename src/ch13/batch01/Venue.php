@@ -2,8 +2,6 @@
 
 namespace popp\ch13\batch01;
 
-use popp\ch12\batch11\SpaceCollection;
-
 class Venue extends DomainObject
 {
     private ?SpaceCollection $spaces = null;
