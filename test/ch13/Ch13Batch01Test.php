@@ -2,6 +2,7 @@
 
 namespace ch13;
 
+use PDO;
 use popp\test\BaseUnit;
 use popp\ch13\batch01\Runner;
 
@@ -47,4 +48,12 @@ class Ch13Batch01Test extends BaseUnit {
         self::assertMatchesRegularExpression("/The big stage/", $val);
         self::assertMatchesRegularExpression("/The room downstairs/", $val);
     }
+
+    /*public function testFakeMapper()
+    {
+        $dsn = 'sqlite:/Users/gene/code/p8opp/src/ch13/batch01/data/woo.db';
+        $pdo = new PDO($dsn);
+        $mapper = new FakeMapper($pdo);
+        self::assertInstanceOf(FakeMapper, $mapper);
+    }*/
 }

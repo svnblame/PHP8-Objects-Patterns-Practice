@@ -3,6 +3,9 @@
 namespace popp\ch13\batch01;
 
 /* listing 13.03 */
+
+use popp\ch12\batch01\AppException;
+
 class VenueMapper extends Mapper
 {
     private \PDOStatement $selectStmt;
@@ -52,6 +55,9 @@ class VenueMapper extends Mapper
         return $this->selectAllStmt;
     }
 
+    /**
+     * @throws AppException
+     */
     protected function getCollection(array $raw): VenueCollection
     {
         return new VenueCollection($raw, $this);
@@ -59,10 +65,16 @@ class VenueMapper extends Mapper
 
     protected function doCreateObject(array $raw): Venue
     {
-        return new Venue(
+        $obj = new Venue(
             (int)$raw['id'],
             $raw['name'],
         );
+
+        $spaceMapper = new SpaceMapper();
+        $spaceCollection = $spaceMapper->findByVenue($raw['id']);
+        $obj->setSpaces($spaceCollection);
+
+        return $obj;
     }
 
     /* listing 13.06 */
