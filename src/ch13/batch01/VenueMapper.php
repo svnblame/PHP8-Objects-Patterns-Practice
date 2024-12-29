@@ -37,7 +37,7 @@ class VenueMapper extends Mapper
     public function update(DomainObject $obj): void
     {
         $values = [
-            $obj->getName(),
+            $obj->name,
             $obj->getId(),
             $obj->getId(),
         ];
@@ -80,7 +80,7 @@ class VenueMapper extends Mapper
     /* listing 13.06 */
     protected function doInsert(DomainObject $object): void
     {
-        $values = [$object->getName()];
+        $values = [$object->name];
         $this->insertStmt->execute($values);
         $id = $this->pdo->lastInsertId();
         $object->setId((int)$id);
