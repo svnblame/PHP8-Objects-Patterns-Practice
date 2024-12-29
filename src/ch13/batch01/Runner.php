@@ -37,7 +37,7 @@ class Runner
         $venue = $mapper->find($venue->getId());
         print_r($venue);
         // alter our object
-        $venue->setName('The Bibble Beer Likey Lounge');
+        $venue->name = 'The Bibble Beer Likey Lounge';
         // call update to enter the amended data
         $mapper->update($venue);
         // once again, go back to the database to prove it worked
@@ -58,7 +58,7 @@ class Runner
         $collection->add(new Venue(-1, "Duck and Badger"));
 
         foreach ($collection as $venue) {
-            print $venue->getName() . "\n";
+            print $venue->name . "\n";
         }
     }
 

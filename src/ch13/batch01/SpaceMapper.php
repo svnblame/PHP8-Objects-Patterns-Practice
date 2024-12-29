@@ -41,7 +41,7 @@ class SpaceMapper extends Mapper
     public function update(DomainObject $object): void
     {
         $values = [
-            $object->getName(),
+            $object->name,
             $object->getId(),
             $object->getId()
         ];
@@ -93,7 +93,7 @@ class SpaceMapper extends Mapper
             throw new AppException("Venue not provided");
         }
 
-        $values = [$object->getName(), $venue->getId()];
+        $values = [$object->name, $venue->getId()];
         $this->insertStatement->execute($values);
         $id = $this->pdo->lastInsertId();
         $object->setId((int)$id);
