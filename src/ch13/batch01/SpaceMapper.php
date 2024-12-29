@@ -38,19 +38,25 @@ class SpaceMapper extends Mapper
         );
     }
 
-    public function update(DomainObject $obj): void
+    public function update(DomainObject $object): void
     {
-        // TODO: Implement update() method.
+        $values = [
+            $object->getName(),
+            $object->getId(),
+            $object->getId()
+        ];
+
+        $this->updateStatement->execute($values);
     }
 
     protected function selectStmt(): \PDOStatement
     {
-        // TODO: Implement selectStmt() method.
+        return $this->selectStatement;
     }
 
     protected function selectAllStmt(): \PDOStatement
     {
-        // TODO: Implement selectAllStmt() method.
+        return $this->selectAllStatement;
     }
 
     /**
@@ -64,17 +70,39 @@ class SpaceMapper extends Mapper
 
     protected function doCreateObject(array $raw): DomainObject
     {
-        // TODO: Implement doCreateObject() method.
+        $object = new Space(
+            (int) $raw['id'],
+            $raw['name']
+        );
+
+        $venueMapper = new VenueMapper();
+        $venue = $venueMapper->find((int) $raw['venue']);
+        $object->setVenue($venue);
+
+        return $object;
     }
 
+    /**
+     * @throws AppException
+     */
     protected function doInsert(DomainObject $object): void
     {
-        // TODO: Implement doInsert() method.
+        $venue = $object->getVenue();
+
+        if (! $venue) {
+            throw new AppException("Venue not provided");
+        }
+
+        $values = [$object->getName(), $venue->getId()];
+        $this->insertStatement->execute($values);
+        $id = $this->pdo->lastInsertId();
+        $object->setId((int)$id);
     }
 
+    /* listing 13.23 */
     protected function targetClass(): string
     {
-        // TODO: Implement targetClass() method.
+        return Space::class;
     }
 
     /* listing 13.18 */
