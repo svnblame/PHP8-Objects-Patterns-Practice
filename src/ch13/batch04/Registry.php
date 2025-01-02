@@ -5,10 +5,6 @@ namespace popp\ch13\batch04;
 use popp\ch12\batch06\Conf;
 use popp\ch12\batch06\Request;
 use popp\ch12\batch06\ApplicationHelper;
-use popp\ch13\batch01\SpaceCollection;
-use popp\ch13\batch01\SpaceMapper;
-use popp\ch13\batch01\VenueCollection;
-use popp\ch13\batch01\VenueMapper;
 
 class Registry {
     private static $instance = null;

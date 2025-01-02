@@ -30,6 +30,28 @@ class Runner {
         return $names;
     }
 
+    public static function run2()
+    {
+        self::setUp();
+        ObjectWatcher::reset();
+
+        /* listing 13.28 */
+
+        // a -1 id value represents a brand-new Venue or Space
+        $venue = new Venue(-1, "The Green Trees");
+
+        $venue->addSpace(
+            new Space(-1, 'The Space Upstairs')
+        );
+
+        $venue->addSpace(
+            new Space(-1, 'The Bar Stage')
+        );
+
+        // this could be called from the controller or a helper class
+        ObjectWatcher::instance()->performOperations();
+    }
+
     #[NoReturn]
     public static function setUp(): void
     {

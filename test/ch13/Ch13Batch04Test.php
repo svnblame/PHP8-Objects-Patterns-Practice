@@ -19,11 +19,13 @@ class Ch13Batch04Test extends BaseUnit {
         $expected = ["The Likey Lounge", "The Bibble Beer Likey Lounge"];
         self::assertEquals($expected, $names);
 
-        /*$val = $this->capture(function() { Runner::run2(); });
+        $val = $this->capture(function() { Runner::run2(); });
+
         $expected = "inserting The Green Trees\ninserting The Space Upstairs\ninserting The Bar Stage\n";
+
         self::assertEquals($expected, $val);
 
-        $val = $this->capture(function() { Runner::run3(); });
+        /*$val = $this->capture(function() { Runner::run3(); });
         $expected = "    happy happy time\n    cry sad shouty time\n";
         self::assertEquals($expected, $val);*/
     }
