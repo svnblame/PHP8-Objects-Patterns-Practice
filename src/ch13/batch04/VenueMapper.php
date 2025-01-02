@@ -1,40 +1,32 @@
 <?php declare(strict_types=1);
 
-namespace popp\ch13\batch03;
-
-use popp\ch12\batch01\AppException;
-use popp\ch13\batch01\Venue;
-use popp\ch13\batch01\Collection;
-use popp\ch13\batch01\VenueCollection;
-use popp\ch13\batch03\Mapper;
-use popp\ch13\batch01\DomainObject;
-use popp\ch13\batch01\SpaceMapper;
+namespace popp\ch13\batch04;
 
 class VenueMapper extends Mapper
 {
     private \PDOStatement $selectStatement;
     private \PDOStatement $selectAllStatement;
-    private \PDOStatement $insertStatement;
     private \PDOStatement $updateStatement;
+    private \PDOStatement $insertStatement;
 
     public function __construct()
     {
         parent::__construct();
 
         $this->selectStatement = $this->pdo->prepare(
-            "SELECT * FROM `venue`"
+            "SELECT * FROM venue WHERE id = ?"
         );
 
         $this->selectAllStatement = $this->pdo->prepare(
-            "SELECT * FROM `venue`"
+            "SELECT * FROM venue"
         );
 
         $this->updateStatement = $this->pdo->prepare(
-            "UPDATE `venue` SET `name`=?, `id`=? WHERE `id`=?"
+            "UPDATE venue SET name = ?, id = ? WHERE id = ?"
         );
 
         $this->insertStatement = $this->pdo->prepare(
-            "INSERT INTO `venue` ( `name` ) VALUES ( ? )"
+            "INSERT INTO venue (name) VALUES (?)"
         );
     }
 
@@ -43,35 +35,23 @@ class VenueMapper extends Mapper
         return Venue::class;
     }
 
-    protected function selectAllStatement(): \PDOStatement
-    {
-        return $this->selectStatement;
-    }
-
-    /**
-     * @throws AppException
-     */
-    protected function getCollection(array $raw): Collection
+    public function getCollection(array $raw): VenueCollection
     {
         return new VenueCollection($raw, $this);
     }
 
-    protected function update(DomainObject $object): void
+    protected function selectAllStatement(): \PDOStatement
     {
-        $values = [
-            $object->name,
-            $object->getId(),
-            $object->getId()
-        ];
-        $this->updateStatement->execute($values);
+        return $this->selectAllStatement;
     }
 
-    /**
-     * listing 13.14
-     *
-     * @throws AppException
-     */
-    protected function doCreateObject(array $raw): DomainObject
+    public function update(DomainObject $object): void
+    {
+       $values = [$object->getName(), $object->getId(), $object->getId()];
+       $this->updateStatement->execute($values);
+    }
+
+    protected function doCreateObject(array $raw): Venue
     {
         $object = new Venue((int)$raw['id'], $raw['name']);
         $spaceMapper = new SpaceMapper();
@@ -83,7 +63,7 @@ class VenueMapper extends Mapper
 
     protected function doInsert(DomainObject $object): void
     {
-        $values = [$object->name];
+        $values = [$object->getName()];
         $this->insertStatement->execute($values);
         $id = $this->pdo->lastInsertId();
         $object->setId((int)$id);
