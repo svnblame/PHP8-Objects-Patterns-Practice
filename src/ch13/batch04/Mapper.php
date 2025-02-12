@@ -20,7 +20,7 @@ abstract class Mapper {
 
         if (! is_null($old)) return $old;
 
-        $this->selectStatement->execute([$id]);
+        $this->selectStatement()->execute([$id]);
         $raw = $this->selectStatement()->fetch();
         $this->selectStatement()->closeCursor();
 
@@ -49,7 +49,7 @@ abstract class Mapper {
 
         if (! is_null($old)) return $old;
 
-        $object = $this->doObjectCreate($raw);
+        $object = $this->doCreateObject($raw);
         $this->addToMap($object);
 
         return $object;

@@ -5,9 +5,7 @@ namespace popp\ch13\batch04;
 /* listing 13.25 */
 abstract class DomainObject
 {
-    protected int $id = -1;
-
-    public function __construct(int $id = -1)
+    public function __construct(protected int $id = -1)
     {
         if ($this->id < 0) $this->markNew();
     }

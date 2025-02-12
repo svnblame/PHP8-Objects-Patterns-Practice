@@ -10,11 +10,14 @@ abstract class Collection implements \Iterator
     private int $pointer = 0;
     private array $objects = [];
 
+    /**
+     * @throws AppException
+     */
     public function __construct(protected array $raw = [], protected ?Mapper $mapper = null)
     {
-        $this->total = count($this->raw);
+        $this->total = count($raw);
 
-        if (count($this->raw) && is_null($this->mapper)) {
+        if (count($raw) && is_null($mapper)) {
             throw new AppException('Mapper required to generate objects.');
         }
     }
@@ -48,17 +51,16 @@ abstract class Collection implements \Iterator
 
         if ($num >= $this->total || $num < 0) return null;
 
-        $object = null;
-
         if (isset($this->objects[$num])) {
-            $object = $this->objects[$num];
+            return $this->objects[$num];
         }
 
         if (isset($this->raw[$num])) {
-            $object = $this->mapper->createObject($this->raw[$num]);
+            $this->objects[$num] = $this->mapper->createObject($this->raw[$num]);
+            return $this->objects[$num];
         }
 
-        return $object;
+        return null;
     }
 
     /**

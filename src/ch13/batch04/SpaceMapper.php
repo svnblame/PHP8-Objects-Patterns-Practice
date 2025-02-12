@@ -2,6 +2,8 @@
 
 namespace popp\ch13\batch04;
 
+use popp\ch13\batch01\AppException;
+
 class SpaceMapper extends Mapper
 {
     private \PDOStatement $selectStatement;
@@ -37,9 +39,12 @@ class SpaceMapper extends Mapper
 
     protected function selectAllStatement(): \PDOStatement
     {
-        // TODO: Implement selectAllStatement() method.
+        return $this->selectAllStatement;
     }
 
+    /**
+     * @throws AppException
+     */
     protected function getCollection(array $raw): Collection
     {
         return new SpaceCollection($raw, $this);
@@ -47,7 +52,8 @@ class SpaceMapper extends Mapper
 
     protected function update(DomainObject $object): void
     {
-        // TODO: Implement update() method.
+        $values = [$object->getName(), $object->getId(), $object->getId()];
+        $this->updateStatement->execute($values);
     }
 
     /* listing 13.29 */
@@ -65,13 +71,40 @@ class SpaceMapper extends Mapper
         return $object;
     }
 
+    protected function targetClass(): string
+    {
+        return Space::class;
+    }
+
+    /**
+     * @throws AppException
+     */
     protected function doInsert(DomainObject $object): void
     {
-        // TODO: Implement doInsert() method.
+        $venue = $object->getVenue();
+
+        if (! $venue) {
+            throw new AppException("Cannot save without Venue");
+        }
+
+        $values = [ $object->getName(), $venue->getId() ];
+        $this->insertStatement->execute($values);
+        $id = $this->pdo->lastInsertId();
+        $object->setId((int)$id);
     }
 
     protected function selectStatement(): \PDOStatement
     {
-        // TODO: Implement selectStatement() method.
+        return $this->selectStatement;
+    }
+
+    /**
+     * @throws AppException
+     */
+    public function findByVenue($vid): SpaceCollection
+    {
+        $this->findByVenueStatement->execute([$vid]);
+
+        return new SpaceCollection($this->findByVenueStatement->fetchAll(), $this);
     }
 }

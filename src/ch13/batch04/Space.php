@@ -53,7 +53,7 @@ class Space extends DomainObject
         $this->events = null;
     }
 
-    public function getVenue(): Venue
+    public function getVenue(): ?Venue
     {
         return $this->venue;
     }
