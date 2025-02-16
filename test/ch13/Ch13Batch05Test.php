@@ -11,5 +11,13 @@ class Ch13Batch05Test extends BaseUnit
     {
         $val = $this->capture(function() { Runner::run(); });
         self::assertMatchesRegularExpression("/Venue Object/", $val);
+
+        $names = Runner::run2();
+        $expected = [
+            'The Venue',
+            'The Other Venue',
+        ];
+
+        self::assertEquals($expected, $names);
     }
 }

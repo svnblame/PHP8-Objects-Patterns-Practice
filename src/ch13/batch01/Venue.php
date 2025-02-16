@@ -6,16 +6,7 @@ class Venue extends DomainObject
 {
     private ?SpaceCollection $spaces = null;
 
-    public function __construct(int $id, public string $name {
-        get {
-            return $this->name;
-        }
-        set {
-            $this->name = $value;
-            $this->markDirty();
-        }
-    }
-    )
+    public function __construct(int $id, public string $name)
     {
         parent::__construct($id);
     }
@@ -60,4 +51,14 @@ class Venue extends DomainObject
         return $reg->getVenueMapper();
     }
 
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+        $this->markDirty();
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
 }

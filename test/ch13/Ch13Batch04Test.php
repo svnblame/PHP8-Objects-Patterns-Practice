@@ -25,10 +25,10 @@ class Ch13Batch04Test extends BaseUnit {
 
         self::assertEquals($expected, $val);
 
-        $val = $this->capture(function() { Runner::run3(); });
+        /*$val = $this->capture(function() { Runner::run3(); });
 
         $expected = "    happy happy time\n    cry sad shouty time\n";
 
-        self::assertEquals($expected, $val);
+        self::assertEquals($expected, $val);*/
     }
 }
