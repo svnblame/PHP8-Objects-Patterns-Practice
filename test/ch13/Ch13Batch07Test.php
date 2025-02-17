@@ -11,5 +11,8 @@ class Ch13Batch07Test extends BaseUnit
     {
         $val = $this->capture(function () { Runner::run(); });
         self::assertMatchesRegularExpression("/^name = 'The Good Show' AND start > \d+ AND start < \d+/", $val);
+
+        $val = $this->capture(function () { Runner::run2(); });
+        self::assertEquals("Field 'banana' is not a legal field (name, id, start, duration, space)", $val);
     }
 }
