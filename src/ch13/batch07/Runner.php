@@ -51,4 +51,11 @@ class Runner
         $vuf = new VenueUpdateFactory();
         print_r($vuf->newUpdate(new Venue(334, "The Happy Hairband")));
     }
+
+    public static function run3_1(): void
+    {
+        /* listing 13.50 */
+        $vuf = new VenueUpdateFactory();
+        print_r($vuf->newUpdate(new Venue(334, "The Lonely Hat Hive")));
+    }
 }

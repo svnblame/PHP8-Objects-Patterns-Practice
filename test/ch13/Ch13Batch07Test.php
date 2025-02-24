@@ -20,6 +20,7 @@ class Ch13Batch07Test extends BaseUnit
         self::assertMatchesRegularExpression("/The Happy Hairband/", $val);
         self::assertMatchesRegularExpression("/334/", $val);
 
-
+        $val = $this->capture(function () { Runner::run3_1(); });
+        self::assertMatchesRegularExpression("/The Lonely Hat Hive/", $val);
     }
 }
