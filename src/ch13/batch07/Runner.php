@@ -44,4 +44,11 @@ class Runner
             print $e->getMessage();
         }
     }
+
+    public static function run3(): void
+    {
+        /* listing 13.46 */
+        $vuf = new VenueUpdateFactory();
+        print_r($vuf->newUpdate(new Venue(334, "The Happy Hairband")));
+    }
 }

@@ -14,5 +14,12 @@ class Ch13Batch07Test extends BaseUnit
 
         $val = $this->capture(function () { Runner::run2(); });
         self::assertEquals("Field 'banana' is not a legal field (name, id, start, duration, space)", $val);
+
+        $val = $this->capture(function () { Runner::run3(); });
+        self::assertMatchesRegularExpression("/UPDATE venue SET name = \? WHERE id = \?/", $val);
+        self::assertMatchesRegularExpression("/The Happy Hairband/", $val);
+        self::assertMatchesRegularExpression("/334/", $val);
+
+
     }
 }
