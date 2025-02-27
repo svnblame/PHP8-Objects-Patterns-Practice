@@ -59,6 +59,9 @@ class Runner
         print_r($vuf->newUpdate(new Venue(334, "The Lonely Hat Hive")));
     }
 
+    /**
+     * @throws \Exception
+     */
     public static function run4(): void
     {
         /* listing 13.50 */

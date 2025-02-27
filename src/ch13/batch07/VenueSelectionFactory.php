@@ -2,6 +2,7 @@
 
 namespace popp\ch13\batch07;
 
+/* listing 13.49 */
 class VenueSelectionFactory extends SelectionFactory
 {
     public function newSelection(IdentityObject $obj): array
