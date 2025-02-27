@@ -54,8 +54,18 @@ class Runner
 
     public static function run3_1(): void
     {
-        /* listing 13.50 */
+        /* listing 13.47 */
         $vuf = new VenueUpdateFactory();
         print_r($vuf->newUpdate(new Venue(334, "The Lonely Hat Hive")));
+    }
+
+    public static function run4(): void
+    {
+        /* listing 13.50 */
+        $vio = new VenueIdentityObject();
+        $vio->field("name")->eq("The Happy Hairband");
+
+        $vsf = new VenueSelectionFactory();
+        print_r($vsf->newSelection($vio));
     }
 }
