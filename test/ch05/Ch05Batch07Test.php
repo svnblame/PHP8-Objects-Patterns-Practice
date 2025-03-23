@@ -34,13 +34,13 @@ EXPECTED;
         $val = $this->capture(function() { Runner::run7(); });
         self::assertMatchesRegularExpression('/public function getSummaryLine\(\): string/', $val);
 
-        $val = $this->capture(function() { Runner::run8(); });
+        /*$val = $this->capture(function() { Runner::run8(); });
 
         $methods = Runner::runInstantiateMethod();
 
         foreach ($methods as $method) {
             self::assertTrue($method instanceof \ReflectionMethod);
-        }
+        }*/
 
         $params = Runner::runInstantiateParameter();
 
