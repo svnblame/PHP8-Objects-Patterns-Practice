@@ -34,7 +34,7 @@ abstract class UpdateFactory
 
             foreach ($fields as $name => $value) {
                 $terms[] = $value;
-                $qs = '?';
+                $qs[] = '?';
             }
 
             $query .= implode(',', $qs);
