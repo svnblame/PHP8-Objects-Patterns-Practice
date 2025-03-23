@@ -9,7 +9,7 @@ class VenueSelectionFactory extends SelectionFactory
     {
         $fields = implode(',', $obj->getObjectFields());
         $core = "SELECT $fields FROM venue";
-        list($where, $values) = $this->buildWhere($obj);
+        [$where, $values] = $this->buildWhere($obj);
 
         return [$core . " " . $where, $values];
     }
