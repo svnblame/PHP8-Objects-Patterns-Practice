@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 use popp\ch03\batch05\AddressManager;
 use popp\ch03\batch05\Runner;
 
-class Batch05Test extends TestCase
+class Ch03Batch05Test extends TestCase
 {
     public function testAddressManager()
     {

@@ -9,7 +9,7 @@ use popp\ch03\batch03\ShopProduct;
 use popp\ch03\batch03\Runner;
 use popp\ch03\batch03\SampleClass;
 
-class Batch03Test extends TestCase
+class Ch03Batch03Test extends TestCase
 {
     public function testProduct()
     {

@@ -10,7 +10,7 @@ use popp\ch03\batch09\ShopProduct;
 use popp\ch03\batch09\AddressManager;
 use popp\ch03\batch09\Runner;
 
-class Batch09Test extends TestCase
+class Ch03Batch09Test extends TestCase
 {
     public function testShopProduct()
     {

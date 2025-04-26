@@ -1,6 +1,6 @@
 <?php 
 
-namespace popp\test;
+namespace popp;
 
 use PHPUnit\Framework\TestCase;
 

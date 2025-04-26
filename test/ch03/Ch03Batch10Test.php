@@ -11,7 +11,7 @@ use popp\ch03\batch10\Runner;
 use popp\ch03\batch10\Storage;
 use popp\ch03\batch10\Point;
 
-class Batch10Test extends TestCase
+class Ch03Batch10Test extends TestCase
 {
     public function testAddressManager()
     {

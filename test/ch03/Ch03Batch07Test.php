@@ -6,20 +6,19 @@ require_once 'vendor/autoload.php';
 
 use PHPUnit\Framework\TestCase;
 
-use popp\ch03\batch08\AddressManager;
+use popp\ch03\batch07\AddressManager;
+
 // no need to create a copy in this batch
 use popp\ch03\batch04\ShopProduct;
-use popp\ch03\batch08\ShopProductWriter;
-use popp\ch03\batch08\Runner;
+use popp\ch03\batch07\ShopProductWriter;
+use popp\ch03\batch07\Runner;
 
-class Batch08Test extends TestCase
+class Ch03Batch07Test extends TestCase
 {
     public function testAddressManager()
     {
         $aman = new AddressManager();
         self::assertTrue($aman instanceof AddressManager);
-        self::assertFalse($aman->outputAddresses("false"));
-        self::assertTrue($aman->outputAddresses(true));
     }
 
     public function testProductWriter()
@@ -40,7 +39,10 @@ class Batch08Test extends TestCase
         ob_end_clean();
         self::assertEquals("title: first main (99)\n", $output1);
 
-        // uncomment to throw fatal error caused by wrong type passed to write()
-        // Runner::run1();
+        ob_start();
+        Runner::run1();
+        $output2 = ob_get_contents();
+        ob_end_clean();
+        self::assertEquals("My Antonia: Willa Cather (5.99)\n", $output2);
     }
 }

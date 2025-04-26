@@ -14,7 +14,7 @@ use popp\ch03\batch15\CdProduct;
 use popp\ch03\batch15\ShopProductWriter;
 use SebastianBergmann\RecursionContext\InvalidArgumentException;
 
-class Batch15Test extends TestCase 
+class Ch03Batch15Test extends TestCase
 {
     /**
      * @test

@@ -14,7 +14,7 @@ use popp\ch03\batch11\BookProduct;
 use popp\ch03\batch11\CdProduct;
 use popp\ch03\batch11\ShopProductWriter;
 
-class Batch11Test extends TestCase
+class Ch03Batch11Test extends TestCase
 {
     public function testStorage()
     {
