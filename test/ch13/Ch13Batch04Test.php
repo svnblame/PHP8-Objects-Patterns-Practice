@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace ch13;
+namespace popp\ch13;
 
 use JetBrains\PhpStorm\NoReturn;
 use popp\ch12\batch06\AppException;
-use popp\test\BaseUnit;
+use popp\BaseUnit;
 use popp\ch13\batch04\Runner;
 
 class Ch13Batch04Test extends BaseUnit {

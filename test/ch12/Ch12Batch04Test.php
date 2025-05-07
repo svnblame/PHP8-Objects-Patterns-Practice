@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace ch12;
+namespace popp\ch12;
 
 use popp\ch12\batch04\TreeBuilder;
-use popp\test\BaseUnit;
+use popp\BaseUnit;
 use popp\ch12\batch04\Runner;
 use popp\ch12\batch04\Registry;
 use popp\ch12\batch04\Request;

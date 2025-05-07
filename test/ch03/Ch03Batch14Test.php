@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace popp\test\ch03;
+namespace popp\ch03;
 
 require_once 'vendor/autoload.php';
 

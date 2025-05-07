@@ -1,12 +1,12 @@
 <?php declare(strict_types = 1);
 
-namespace popp\test\ch09;
+namespace popp\ch09;
 
 use popp\ch09\batch14\AppointmentMaker;
 use popp\ch09\batch15\AppointmentMaker2;
 use popp\ch09\batch15\ObjectAssembler;
 use popp\ch09\batch15\TerrainFactory;
-use popp\test\BaseUnit;
+use popp\BaseUnit;
 use popp\ch09\batch15\Runner;
 use popp\ch09\batch11\Sea;
 use popp\ch09\batch11\Plains;

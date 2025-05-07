@@ -1,8 +1,8 @@
 <?php
 
-namespace popp\test\ch06;
+namespace popp\ch06;
 
-use popp\test\BaseUnit;
+use popp\BaseUnit;
 use popp\ch06\batch01\ShopProduct;
 use popp\ch06\batch01\Runner;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace ch10;
+namespace popp\ch10;
 
-use popp\test\BaseUnit;
+use popp\BaseUnit;
 use popp\ch10\batch03\Army;
 use popp\ch10\batch03\Soldier;
 use popp\ch10\batch03\Tank;

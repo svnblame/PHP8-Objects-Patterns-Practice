@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace ch12;
+namespace popp\ch12;
 
 use popp\ch12\batch01\AppException;
-use popp\test\BaseUnit;
+use popp\BaseUnit;
 use popp\ch12\batch01\ApplicationHelper;
 
 class Ch12Batch01Test extends BaseUnit {

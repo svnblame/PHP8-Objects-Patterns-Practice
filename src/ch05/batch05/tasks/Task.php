@@ -1,7 +1,7 @@
 <?php
 
 /* listing 05.36 */
-namespace tasks;
+namespace popp\ch05\batch05\tasks;
 
 class Task
 {
