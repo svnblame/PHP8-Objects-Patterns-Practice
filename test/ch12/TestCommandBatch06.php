@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace popp\test\ch12;
+namespace popp\ch12;
 
 use popp\ch12\batch06\Command;
 use popp\ch12\batch06\Request;

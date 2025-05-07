@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace ch12;
+namespace popp\ch12;
 
 use popp\ch12\batch02\Registry;
 use popp\ch12\batch02\Request;
-use popp\test\BaseUnit;
+use popp\BaseUnit;
 use popp\ch12\batch02\Runner;
 
 class Ch12Batch02Test extends BaseUnit {

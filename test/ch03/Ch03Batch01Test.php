@@ -1,13 +1,12 @@
 <?php
 
-namespace popp\test\ch03;
+namespace popp\ch03;
 
-use popp\test\BaseUnit;
-
+use popp\BaseUnit;
 use popp\ch03\batch01\ShopProduct;
 use popp\ch03\batch01\Runner;
 
-class Batch01Test extends BaseUnit
+class Ch03Batch01Test extends BaseUnit
 {
     function testProduct()
     {

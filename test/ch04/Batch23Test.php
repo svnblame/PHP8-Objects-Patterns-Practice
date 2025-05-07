@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace popp\test\ch04;
+namespace popp\ch04;
 
-use popp\test\BaseUnit;
+use popp\BaseUnit;
 use popp\ch04\batch23\Runner;
 
 class Batch23Test extends BaseUnit

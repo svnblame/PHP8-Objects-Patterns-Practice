@@ -1,8 +1,8 @@
 <?php
 
-namespace ch10;
+namespace popp\ch10;
 
-use popp\test\BaseUnit;
+use popp\BaseUnit;
 use popp\ch10\batch08\Runner;
 
 class Ch10Batch08Test extends BaseUnit {

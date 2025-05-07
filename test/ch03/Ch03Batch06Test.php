@@ -1,6 +1,6 @@
 <?php
 
-namespace popp\test\ch03;
+namespace popp\ch03;
 
 require_once 'vendor/autoload.php';
 
@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 use popp\ch03\batch06\AddressManager;
 use popp\ch03\batch06\Runner;
 
-class Batch06Test extends TestCase
+class Ch03Batch06Test extends TestCase
 {
     public function testAddressManager()
     {

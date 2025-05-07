@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace popp\test\ch03;
+namespace popp\ch03;
 
 require_once 'vendor/autoload.php';
 
@@ -14,7 +14,7 @@ use popp\ch03\batch15\CdProduct;
 use popp\ch03\batch15\ShopProductWriter;
 use SebastianBergmann\RecursionContext\InvalidArgumentException;
 
-class Batch15Test extends TestCase 
+class Ch03Batch15Test extends TestCase
 {
     /**
      * @test

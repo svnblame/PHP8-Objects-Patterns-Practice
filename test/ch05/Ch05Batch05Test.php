@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace popp\test\ch05;
+namespace popp\ch05;
 
 use Exception;
-use popp\test\BaseUnit;
+use popp\BaseUnit;
 use popp\ch05\batch05\Runner;
 
 class Ch05Batch05Test extends BaseUnit
@@ -38,7 +38,7 @@ EXPECTED;
         $expected = <<<EXPECTED
 popp\ch05\batch05\util\Writer
 popp\ch05\batch05\util\db\Querier
-popp\ch05\batch05\Local
+popp\ch05\batch05\LocalNsEg
 
 EXPECTED;
 
@@ -105,7 +105,7 @@ EXPECTED;
         $expected = <<<EXPECTED
 util\Writer
 util\db\Querier
-mypackage\Local
+popp\ch05\batch05\LocalNsEg
 
 EXPECTED;
 

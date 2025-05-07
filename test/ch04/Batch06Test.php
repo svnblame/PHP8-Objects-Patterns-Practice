@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace popp\test\ch04;
+namespace popp\ch04;
 
 require_once 'vendor/autoload.php';
 
-use popp\test\BaseUnit;
+use popp\BaseUnit;
 use popp\ch04\Batch06\Runner;
 
 class Batch06Test extends BaseUnit 

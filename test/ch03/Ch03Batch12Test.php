@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace popp\test\ch03;
+namespace popp\ch03;
 
 require_once 'vendor/autoload.php';
 
@@ -12,7 +12,7 @@ use popp\ch03\batch12\BookProduct;
 use popp\ch03\batch12\CdProduct;
 use popp\ch03\batch12\Runner;
 
-class Batch12Test extends TestCase
+class Ch03Batch12Test extends TestCase
 {
     public function testStorage()
     {
