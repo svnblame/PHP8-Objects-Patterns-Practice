@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace ch12;
+namespace popp\ch12;
 
 use popp\ch12\batch05\CommandResolver;
-use popp\test\BaseUnit;
+use popp\BaseUnit;
 use popp\ch12\batch05\Runner;
 use popp\ch12\batch05\AppException;
 use popp\ch12\batch05\TestRequest;
@@ -11,7 +11,6 @@ use popp\ch12\batch05\Registry;
 use popp\ch12\batch05\Conf;
 use popp\ch12\batch05\ApplicationHelper;
 use popp\ch12\batch05\DefaultCommand;
-use popp\test\ch12\TestCommandBatch05;
 
 class Ch12Batch05Test extends BaseUnit {
     public function testRunner()
@@ -84,7 +83,7 @@ class Ch12Batch05Test extends BaseUnit {
 
         // matching path and existing class
         $request->clearFeedback();
-        $commands->set('/testcmd', '\\popp\\test\\ch12\\TestCommandBatch05');
+        $commands->set('/testcmd', '\\popp\\ch12\\TestCommandBatch05');
         $request->setPath('/testcmd');
         $command = $resolver->getCommand($request);
         $feedback = $request->getFeedback();

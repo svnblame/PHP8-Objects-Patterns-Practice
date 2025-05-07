@@ -1,8 +1,8 @@
 <?php
 
-namespace popp\test\ch04;
+namespace popp\ch04;
 
-use popp\test\BaseUnit;
+use popp\BaseUnit;
 use popp\ch04\batch24\Runner;
 
 class Batch24Test extends BaseUnit

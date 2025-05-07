@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace ch10;
+namespace popp\ch10;
 
-use popp\test\BaseUnit;
+use popp\BaseUnit;
 use popp\ch10\batch01\Archer;
 use popp\ch10\batch01\LaserCannonUnit;
 use popp\ch10\batch01\Runner;

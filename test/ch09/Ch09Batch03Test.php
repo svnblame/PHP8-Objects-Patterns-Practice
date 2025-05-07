@@ -1,10 +1,10 @@
 <?php declare(strict_types = 1);
 
-namespace popp\test\ch09;
+namespace popp\ch09;
 
 use popp\ch04\batch02\ShopProduct;
 use popp\ch04\batch02\DbGenerate;
-use popp\test\BaseUnit;
+use popp\BaseUnit;
 use popp\ch09\batch03\Runner;
 
 class Ch09Batch03Test extends BaseUnit

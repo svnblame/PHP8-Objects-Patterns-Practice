@@ -1,11 +1,11 @@
 <?php
 
-namespace mypackage;
+namespace popp\ch05\batch05;
 
 use util as u;
 use util\db\Querier as q;
 
-class Local {}
+class LocalNsEg {}
 
 // Resolve these:
 
@@ -23,4 +23,4 @@ class Local {}
 /* listing 05.44 */
 print u\Writer::class . "\n";
 print q::class . "\n";
-print Local::class . "\n";
+print LocalNsEg::class . "\n";

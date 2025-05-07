@@ -1,8 +1,8 @@
 <?php
 
-namespace popp\test\ch08;
+namespace popp\ch08;
 
-use popp\test\BaseUnit;
+use popp\BaseUnit;
 use popp\ch08\batch01\Lesson;
 use popp\ch08\batch01\Lecture;
 use popp\ch08\batch01\Seminar;

@@ -1,6 +1,6 @@
 <?php
 
-namespace popp\test\ch03;
+namespace popp\ch03;
 
 require_once 'vendor/autoload.php';
 
@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 use popp\ch03\batch04\ShopProduct;
 use popp\ch03\batch04\Runner;
 
-class Batch04Test extends TestCase
+class Ch03Batch04Test extends TestCase
 {
     public function testProduct()
     {

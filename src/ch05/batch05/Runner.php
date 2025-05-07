@@ -13,7 +13,7 @@ class Runner
         /* listing 05.37 */
         $classname = 'Task';
         require_once("tasks/{$classname}.php");
-        $classname = "tasks\\{$classname}";
+        $classname = "popp\\ch05\\batch05\\tasks\\{$classname}";
         $myObj = new $classname();
         $myObj->doSpeak();
         /* listing 05.37 */
@@ -32,7 +32,7 @@ class Runner
 
         require_once($path);
 
-        $qclassname = "tasks\\{$classname}";
+        $qclassname = "popp\\ch05\\batch05\\tasks\\{$classname}";
 
         if (! class_exists($qclassname)) {
             throw new \Exception("Task {$qclassname} does not exist");
@@ -62,7 +62,7 @@ class Runner
     {
         print u\Writer::class . "\n";
         print q::class . "\n";
-        print Local::class . "\n";
+        print LocalNsEg::class . "\n";
     }
 
     public static function run4(): void

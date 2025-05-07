@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace ch12;
+namespace popp\ch12;
 
 use popp\ch12\batch06\AppController;
 use popp\ch12\batch06\ApplicationHelper;
@@ -15,7 +15,7 @@ use popp\ch12\batch06\Runner;
 use popp\ch12\batch06\TemplateViewComponent;
 use popp\ch12\batch06\TestRequest;
 use popp\ch12\batch06\ViewComponentCompiler;
-use popp\test\BaseUnit;
+use popp\BaseUnit;
 
 
 class Ch12Batch06Test extends BaseUnit {
@@ -161,7 +161,7 @@ BLAH;
 
         // matching path and existing class
         // - no template matched
-        $descriptor = new ComponentDescriptor('/testCmd', '\\popp\\test\\ch12\\TestCommandBatch06');
+        $descriptor = new ComponentDescriptor('/testCmd', '\\popp\\ch12\\TestCommandBatch06');
         $request->clearFeedback();
         $commands->set('/testCmd', $descriptor);
         $request->setPath('/testCmd');
@@ -169,7 +169,7 @@ BLAH;
         $feedBack = $request->getFeedBack();
 
         self::assertEquals(0, count($feedBack));
-        self::assertTrue($cmd instanceof \popp\test\ch12\TestCommandBatch06);
+        self::assertTrue($cmd instanceof \popp\ch12\TestCommandBatch06);
 
         $view = $resolver->getView($request);
 

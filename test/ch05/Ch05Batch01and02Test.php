@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace popp\test\ch05;
+namespace popp\ch05;
 
 use popp\ch05\batch02\my\Outputter;
-use popp\test\BaseUnit;
+use popp\BaseUnit;
 
 class Ch05Batch01and02Test extends BaseUnit
 {

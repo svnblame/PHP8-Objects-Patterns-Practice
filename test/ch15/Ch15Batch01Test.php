@@ -1,12 +1,12 @@
 <?php
 
-namespace ch15;
+namespace popp\ch15;
 
 require_once('vendor/autoload.php');
 require_once('src/ch15/batch01/EbookParser.php');
 
 use popp\ch15\batch01\EbookParser;
-use popp\test\BaseUnit;
+use popp\BaseUnit;
 use popp\ch15\batch01\EarthGame;
 use popp\ch15\batch01\Runner;
 
