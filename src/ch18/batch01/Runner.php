@@ -18,4 +18,16 @@ class Runner
         $user = $store->getUser('bob@example.com');
         print_r($user);
     }
+
+    public static function run2(): void
+    {
+        /* listing 18.04 */
+        $store = new UserStore();
+        $store->addUser('bob williams', 'bob@example.com', '12345');
+        $validator = new Validator($store);
+
+        if ($validator->validateUser('bob@example.com', '12345')) {
+            print "pass, friend!\n";
+        }
+    }
 }
