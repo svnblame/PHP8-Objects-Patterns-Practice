@@ -17,5 +17,8 @@ class Ch18Batch01Test extends BaseUnit
         self::assertMatchesRegularExpression("/\[mail] => bob@example.com/", $val);
         self::assertMatchesRegularExpression("/\[name] => bob williams/", $val);
         self::assertMatchesRegularExpression("/\[failed] => \d+/", $val);
+
+        $val = $this->capture(function() { Runner::run2(); });
+        self::assertMatchesRegularExpression("/pass, friend!/", $val);
     }
 }

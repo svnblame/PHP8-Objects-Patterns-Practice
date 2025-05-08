@@ -17,7 +17,7 @@ class UserStore
         }
 
         if (strlen($pass) < 5) {
-            throw new \Exception("Password must be at least 5 characters");
+            throw new \Exception("Password must have 5 or more letters");
         }
 
         $this->users[$mail] = [
