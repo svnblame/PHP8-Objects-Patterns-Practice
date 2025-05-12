@@ -33,4 +33,21 @@ class UserStoreTest extends TestCase
         $this->expectException(\Exception::class);
         $this->store->addUser('bob williams', 'bob@example.com', 'ff');
     }
+
+    /* listing 18.10 */
+    public function testAddUserDuplicate(): void
+    {
+        try {
+            $ret = $this->store->addUser('bob williams', 'a@b.com', '123456');
+            $ret = $this->store->addUser('bob stevens', 'a@b.com', '123456');
+            $this->fail('Exception should have been thrown');
+        } catch (\Exception $e) {
+            $const = $this->logicalAnd(
+                $this->logicalNot($this->containsEqual('bob stevens')),
+                $this->isType('array')
+            );
+
+            $this->AssertThat($this->store->getUser('a@b.com'), $const);
+        }
+    }
 }

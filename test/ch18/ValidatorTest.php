@@ -31,4 +31,27 @@ class ValidatorTest extends TestCase
             'Expecting successful validation'
         );
     }
+
+    /* listing 18.11 */
+    public function testValidateIncorrectPass(): void
+    {
+        $store = $this->createMock(UserStore::class);
+        $this->validator = new Validator($store);
+
+        /* listing 18.12 listing 18.13 listing 18.14 */
+        $store->expects($this->once())
+            ->method('notifyPasswordFailure')
+            ->with($this->equalTo('bob@example.com'));
+
+        /* listing 18.15 */
+        $store->expects($this->any())
+            ->method('getUser')
+            ->will($this->returnValue([
+                'name' => 'bob williams',
+                'mail' => 'bob@example.com',
+                'pass' => 'right'
+            ]));
+
+        $this->validator->validateUser('bob@example.com', 'wrong');
+    }
 }
