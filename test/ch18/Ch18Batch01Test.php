@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ch18;
+namespace popp\ch18;
 
 use popp\BaseUnit;
 use popp\ch18\batch01\Runner;

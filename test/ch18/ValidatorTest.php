@@ -2,7 +2,7 @@
 
 /* listing 18.09 */
 
-namespace ch18;
+namespace popp\ch18;
 
 use PHPUnit\Framework\TestCase;
 use popp\ch18\batch01\UserStore;
