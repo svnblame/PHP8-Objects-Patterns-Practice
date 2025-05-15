@@ -3,13 +3,13 @@
 namespace popp\ch18\batch03;
 
 /* listing 18.16 */
-
-use popp\ch04\batch05\User;
-
 class UserStore
 {
     private array $users = [];
 
+    /**
+     * @throws \Exception
+     */
     public function addUser(string $name, string $mail, string $pass): bool
     {
         if (isset($this->users[$mail])) {

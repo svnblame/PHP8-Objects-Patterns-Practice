@@ -5,9 +5,9 @@
 namespace popp\ch18;
 
 use PHPUnit\Framework\TestCase;
-use popp\ch18\batch01\UserStore;
+use popp\ch18\batch03\UserStore;
 
-class UserStoreTest extends TestCase
+class Ch18UserStoreTest extends TestCase
 {
     private UserStore $store;
 
@@ -24,7 +24,9 @@ class UserStoreTest extends TestCase
         $this->store->addUser('bob williams', 'a@b.com', '12345');
         $user = $this->store->getUser('a@b.com');
 
-        $this->assertEquals('a@b.com', $user['mail']);
+        $this->assertEquals('a@b.com', $user->getMail());
+        $this->assertEquals('bob williams', $user->getName());
+        $this->assertEquals('12345', $user->getPass());
     }
 
     /* listing 18.07 listing 18.08 */
@@ -44,7 +46,7 @@ class UserStoreTest extends TestCase
         } catch (\Exception $e) {
             $const = $this->logicalAnd(
                 $this->logicalNot($this->containsEqual('bob stevens')),
-                $this->isType('array')
+                $this->isType('object')
             );
 
             $this->AssertThat($this->store->getUser('a@b.com'), $const);

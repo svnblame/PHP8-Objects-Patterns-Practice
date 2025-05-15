@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 use popp\ch18\batch01\UserStore;
 use popp\ch18\batch01\Validator;
 
-class ValidatorTest extends TestCase
+class Ch18ValidatorTest extends TestCase
 {
     private Validator $validator;
 
